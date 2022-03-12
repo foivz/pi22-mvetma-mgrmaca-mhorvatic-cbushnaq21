@@ -18,8 +18,9 @@ Nakon vaše prijave bit će vam dodijeljen mentor s kojim ćete tijekom semestra
 
 Ime i prezime | E-mail adresa (FOI) | JMBAG | Github korisničko ime
 ------------  | ------------------- | ----- | ---------------------
-Ime i prezime | mhorvatic20@foi.hr  | 0016139285| mhorvatic20
-Ime i prezime | mgrmaca@foi.hr      | 0016137100| Marko128
+Maja Horvatić | mhorvatic20@foi.hr  | 0016139285| mhorvatic20
+Marko Grmača  | mgrmaca@foi.hr      | 0016137100| Marko128
+Mislav Vetma  | mvetma@foi.hr       | 0016139285| Valsim99
 
 ## Opis domene
 Ova aplikacija omogućit će djelatnicima teretana lakšu evidenciju korisnika. U aplikaciji će biti vidljivo tko su članovi, da li su uplatili članarinu, koju vrstu treninga su odabrali i slično. Jednako tako, olakšat će i korisnicima teretane uvid u plaćanje članarina, raspored treninga i slično. Dakle, kao što vidimo, aplikacija će biti dostupna i zaposlenicima teretane i njezinim korisnicima. Isto tako, aplikacija će omogućiti pregled rasporeda treninga što će korisnicima teretane dobro doći radi bolje organzacije vremena. Isto tako, aplikacije će omogućiti korisnicima lakši izbor trenera, jer će korisnici imati uvid o tome kada je neki trener slobodan, te će moći onda doći do njega. 
