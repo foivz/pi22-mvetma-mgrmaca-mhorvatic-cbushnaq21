@@ -28,6 +28,8 @@ Ova aplikacija omogućit će djelatnicima teretana lakšu evidenciju korisnika. 
 
 ## Specifikacija projekta
 
+No  | Feature       | Description | Responsible member
+--- | ------------- | ----------- | ------------------
 F01 | Login/sign up | Korisnik se za početak mora registrirat kako bi mogao u budućnosti koristiti aplikaciju, odnosno ulogirat se. | Marko Grmača
 F02 | Članarina | Korisnik uz pomoć aplikacije vodi evidenciju o (ne)plaćenim članarinama | Mislav Vetma
 F03 | Vrsta treninga | Korisnik u aplikaciji bira vrstu treninga (samostalni, individualni, grupni | Maja Horvatić
