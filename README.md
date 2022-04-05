@@ -32,12 +32,16 @@ F01.A | Sign Up | User needs to create account for him to be able to use the app
 F01.B | Login | Before he is able to use the app, user needs to login | Marko Grmača
 F01.C | Password reset | User can request password reset | Marko Grmača
 F02 | Membership fee | User pays gym membership fee every month | 
-F02.A | Consult your due invoices | Mislav Vetma
-F02.B | Generate + send PDF of invoice | Mislav Vetma
-F03 | Vrsta treninga | Korisnik u aplikaciji bira vrstu treninga (samostalni, individualni, grupni | Maja Horvatić
-F04 | Raspored treninga | Korisnik ima uvid u raspored grupe treninga  | Marko Grmača
-F05 | Profil trenera | Podaci o trenerima (općenito, kontakt)  | Mislav Vetma
-F06 | Treneri | U ovom dijelu, svaki novi korisnik može odabrati svog osobnog trenera  |Maja Horvatić
+F02.A | Consult your due invoices | User gets to choose type of subscription | Mislav Vetma
+F02.B | Generate + send PDF of invoice | The user receives the PDF via email about the paid invoice | Mislav Vetma
+F03 | Training Managment | User can choose between training types and add them to the schedule | 
+F03.A | Apply for training | User chooses training type | Maja Horvatić
+F03.B | Choose timetable | User chooses appointment of training | Maja Horvatić
+F03.C | Reminders | User can set reminders for his appointments | Maja Horvatić
+F04 | User profiles | Types of user pfoiles available in the app | 
+F04.A | Gym users | Users that come to train in the gym and their data | Costa Bushnaq
+F04.B | Coach | Gym coaches and their data | Costa Bushnaq
+F04.C | Gym Boss | Gym owner and admin | Costa Bushnaq
 
 ## Tehnologije i oprema
 U izradi programskih rješenja koristit će se tehnologije i alati koji se koriste na laboratorijskim vježbama kolegija.
