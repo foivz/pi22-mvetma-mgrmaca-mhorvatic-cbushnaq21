@@ -27,8 +27,8 @@ Ova aplikacija omogućit će djelatnicima teretana lakšu evidenciju korisnika. 
 
 No  | Feature       | Description | Responsible member
 --- | ------------- | ----------- | ------------------
-F01 | Login/sign up | Korisnik se za početak mora registrirat kako bi mogao u budućnosti koristiti aplikaciju, odnosno ulogirat se. | Marko Grmača
-F02 | Članarina | Korisnik uz pomoć aplikacije vodi evidenciju o (ne)plaćenim članarinama | Mislav Vetma
+F01 | Login/sign up | To begin with, the user must register in order to be able to use the application or log in in the future. | Marko Grmača
+F02 | Membership fee | User pays gym membership fee every month. The price depends on  | Mislav Vetma
 F03 | Vrsta treninga | Korisnik u aplikaciji bira vrstu treninga (samostalni, individualni, grupni | Maja Horvatić
 F04 | Raspored treninga | Korisnik ima uvid u raspored grupe treninga  | Marko Grmača
 F05 | Profil trenera | Podaci o trenerima (općenito, kontakt)  | Mislav Vetma
