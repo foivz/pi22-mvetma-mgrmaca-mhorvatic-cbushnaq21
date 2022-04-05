@@ -20,7 +20,7 @@ Marko Grmača  | mgrmaca@foi.hr      | 0016137100| Marko128
 Mislav Vetma  | mvetma@foi.hr       | 0016139285| Valsim99
 Costa Bushnaq | cbushnaq21@foi.hr   | 0016157539| SpectreVert
 
-## project description
+## Project description
 
 This application is made for gym users to make it easier to keep records. The world has been completely digitalized, so it would be time to digitize the management of the gym, which will make it easier to monitor the obligations of gym users, employees and the owner.
 The user has the following options:
