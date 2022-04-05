@@ -9,9 +9,9 @@ Ovaj dokument (README.md) predstavlja *osobnu iskaznicu vašeg projekta*. Vaš p
 Za upute o sintaksi koju možete koristiti u ovom dokumentu i kod pisanje vaše projektne dokumentacije pogledajte [ovaj link](https://guides.github.com/features/mastering-markdown/).
 Sav programski kod potrebno je verzionirati u glavnoj *master* grani i *obvezno* smjestiti u mapu Software. Sve artefakte (npr. slike) koje ćete koristiti u vašoj dokumentaciju obvezno verzionirati u posebnoj grani koja je već kreirana i koja se naziva *master-docs* i smjestiti u mapu Documentation.
 
-# Vođenje evidencije u teretani
+# Gym record app
 
-## Projektni tim
+## Project team
 
 Ime i prezime | E-mail adresa (FOI) | JMBAG     | Github korisničko ime
 ------------  | ------------------- | --------- | ---------------------
@@ -20,7 +20,7 @@ Marko Grmača  | mgrmaca@foi.hr      | 0016137100| Marko128
 Mislav Vetma  | mvetma@foi.hr       | 0016139285| Valsim99
 Costa Bushnaq | cbushnaq21@foi.hr   | 0016157539| SpectreVert
 
-## Opis domene
+## project description
 
 This application is made for gym users to make it easier to keep records. The world has been completely digitalized, so it would be time to digitize the management of the gym, which will make it easier to monitor the obligations of gym users, employees and the owner.
 The user has the following options:
@@ -49,7 +49,7 @@ And finally, we come to the owner of the gym. The owner of the gym has an insigh
 
 
 
-## Specifikacija projekta
+## Project specification
 
 No  | Feature       | Description | Responsible member
 --- | ------------- | ----------- | ------------------
@@ -69,5 +69,5 @@ F04.A | Gym users | Users that come to train in the gym and their data | Costa B
 F04.B | Coach | Gym coaches and their data | Costa Bushnaq
 F04.C | Gym Boss | Gym owner and admin | Costa Bushnaq
 
-## Tehnologije i oprema
-U izradi programskih rješenja koristit će se tehnologije i alati koji se koriste na laboratorijskim vježbama kolegija.
+## Technologies and equipment
+The technologies and tools used in the laboratory exercises of the course will be used in the development of software solutions.
