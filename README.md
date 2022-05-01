@@ -1,13 +1,5 @@
-# Inicijalne upute za prijavu projekta iz Programskog inženjerstva
-
-Poštovane kolegice i kolege, 
-
-čestitamo vam jer ste uspješno prijavili svoj projektni tim na kolegiju Programsko inženjerstvo, te je za vas automatski kreiran repozitorij koji ćete koristiti za verzioniranje vašega koda, ali i za pisanje dokumentacije.
-
-Ovaj dokument (README.md) predstavlja *osobnu iskaznicu vašeg projekta*. Vaš prvi zadatak, ukoliko niste odabrali da želite raditi na projektu sa nastavnicima ili u sklopu WBL-a je *prijaviti vlastiti projektni prijedlog* na način da ćete prijavu vašeg projekta, sukladno uputama danim u ovom tekstu, napisati upravo u ovaj dokument, umjesto ovoga teksta.
 
 Za upute o sintaksi koju možete koristiti u ovom dokumentu i kod pisanje vaše projektne dokumentacije pogledajte [ovaj link](https://guides.github.com/features/mastering-markdown/).
-Sav programski kod potrebno je verzionirati u glavnoj *master* grani i *obvezno* smjestiti u mapu Software. Sve artefakte (npr. slike) koje ćete koristiti u vašoj dokumentaciju obvezno verzionirati u posebnoj grani koja je već kreirana i koja se naziva *master-docs* i smjestiti u mapu Documentation.
 
 # Gym record app
 
@@ -21,6 +13,10 @@ Mislav Vetma  | mvetma@foi.hr       | 0016139285| Valsim99
 Costa Bushnaq | cbushnaq21@foi.hr   | 0016157539| SpectreVert
 
 ## Project description
+
+This app will make it easier for gym staff to register users. The application will show who the members are, whether they have paid the membership fee, what type of training they have chosen and the like. Equally, it will make it easier for gym users to see the payment of membership fees, training schedule and the like. So, as we can see, the app will be available to both gym employees and its users. Also, the application will allow you to view the training schedule, which will be good for gym users for better organization of time. Also, the apps will make it easier for users to choose a coach, as users will have insight into when a coach is free and will be able to get to it then.
+
+
 
 This application is made for gym users to make it easier to keep records. The world has been completely digitalized, so it would be time to digitize the management of the gym, which will make it easier to monitor the obligations of gym users, employees and the owner.
 The user has the following options:
@@ -69,13 +65,14 @@ F02 | Membership fee | User pays gym membership fee every month |
 F02.A | Consult your due invoices | User gets to choose type of subscription | Mislav Vetma
 F02.B | Generate + send PDF of invoice | The user receives the PDF via email about the paid invoice | Mislav Vetma
 F03 | Training Managment | User can choose between training types and add them to the schedule | 
-F03.A | Apply for training | User chooses training type | Maja Horvatić
+F03.A | Apply for training | User chooses training type group training or individual (with coach) | Maja Horvatić
 F03.B | Choose timetable | User chooses appointment of training | Maja Horvatić
-F03.C | Reminders | User can set reminders for his appointments | Maja Horvatić
-F04 | User profiles | Types of user pfoiles available in the app | 
+F03.C | Reminders and notifications | User can set reminders for his appointments, reminders are sent via e-mail. Also, the coach gets e-mail notification when client is trying to hire him. | Maja Horvatić
+F04 | User profiles - Superadmin | Types of user pfoiles available in the app | 
 F04.A | Gym users | Users that come to train in the gym and their data | Costa Bushnaq
 F04.B | Coach | Gym coaches and their data | Costa Bushnaq
-F04.C | Gym Boss | Gym owner and admin | Costa Bushnaq
+F04.C | Admin | Gym owner and admin | Costa Bushnaq
+F05 | Statistics | Gym owner and admin has review of all relevant statistics for the gym (users, trainigs, presence ect.) | Costa Bushnaq   
 
 ## Technologies and equipment
 The technologies and tools used in the laboratory exercises of the course will be used in the development of software solutions.
