@@ -61,18 +61,19 @@ F01 | Credentials | To begin with, the user must register in order to be able to
 F01.A | Sign Up | User needs to create account for him to be able to use the app | Marko Grmača
 F01.B | Login | Before he is able to use the app, user needs to login | Marko Grmača
 F01.C | Password reset | User can request password reset | Marko Grmača
-F02 | Membership fee | User pays gym membership fee every month | 
-F02.A | Consult your due invoices | User gets to choose type of subscription | Mislav Vetma
-F02.B | Generate + send PDF of invoice | The user receives the PDF via email about the paid invoice | Mislav Vetma
-F03 | Training Managment | User can choose between training types and add them to the schedule | 
-F03.A | Apply for training | User chooses training type group training or individual (with coach) | Maja Horvatić
-F03.B | Choose timetable | User chooses appointment of training | Maja Horvatić
-F03.C | Reminders and notifications | User can set reminders for his appointments, reminders are sent via e-mail. Also, the coach gets e-mail notification when client is trying to hire him. | Maja Horvatić
-F04 | User profiles - Superadmin | Types of user pfoiles available in the app | 
-F04.A | Gym users | Users that come to train in the gym and their data | Costa Bushnaq
-F04.B | Coach | Gym coaches and their data | Costa Bushnaq
-F04.C | Admin | Gym owner and admin | Costa Bushnaq
-F05 | Statistics | Gym owner and admin has review of all relevant statistics for the gym (users, trainigs, presence ect.) | Costa Bushnaq   
+F02 | Reminders | User gets reminders for his appointments, reminders are sent via e-mail. | Marko Grmača
+F03 | Membership fee | User pays gym membership fee every month | 
+F03.A | Consult your due invoices | User gets to choose type of subscription | Mislav Vetma
+F03.B | Generate + send PDF of invoice | The user receives the PDF via email about the paid invoice | Mislav Vetma
+F04 | Training Managment | User can choose between training types and add them to the schedule | 
+F04.A | Apply for training | User chooses training type group training or individual (with coach) | Maja Horvatić
+F04.B | Choose timetable | User chooses appointment of training | Maja Horvatić
+F04.C | Reminders and notifications |  The coach gets e-mail notification when client is trying to hire him | Maja Horvatić
+F05 | User profiles - Superadmin | Types of user pfoiles available in the app | 
+F05.A | Gym users | Users that come to train in the gym and their data | Costa Bushnaq
+F05.B | Coach | Gym coaches and their data | Costa Bushnaq
+F05.C | Admin | Gym owner and admin | Costa Bushnaq
+F06 | Statistics | Gym owner and admin has review of all relevant statistics for the gym (users, trainigs, presence ect.) | Costa Bushnaq   
 
 ## Technologies and equipment
 The technologies and tools used in the laboratory exercises of the course will be used in the development of software solutions.
