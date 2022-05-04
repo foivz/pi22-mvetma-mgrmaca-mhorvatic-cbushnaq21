@@ -63,16 +63,17 @@ F01.B | Login | Before he is able to use the app, user needs to login | Marko Gr
 F01.C | Password reset | User can request password reset | Marko Grmača
 F02 | Reminders | User gets reminders for his appointments, reminders are sent via e-mail. | Marko Grmača
 F03 | Membership fee | User pays gym membership fee every month | 
-F03.A | Consult your due invoices | User gets to choose type of subscription | Mislav Vetma
+F03.A | Consult your due invoices | User pays his monthly/anual membership fee | Mislav Vetma
 F03.B | Generate + send PDF of invoice | The user receives the PDF via email about the paid invoice | Mislav Vetma
 F04 | Training Managment | User can choose between training types and add them to the schedule | 
 F04.A | Apply for training | User chooses training type group training or individual (with coach) | Maja Horvatić
-F04.B | Choose timetable | User chooses appointment of training | Maja Horvatić
-F04.C | Reminders and notifications |  The coach gets e-mail notification when client is trying to hire him | Maja Horvatić
+F04.B | Pay chosen training plan | After the user has selected his training plan, a bill is sent to him to be payed | Maja Horvatić
+F04.C | Choose timetable | User chooses appointment of training | Maja Horvatić
+F04.D | Reminders and notifications |  The coach gets e-mail notification when client is trying to hire him | Maja Horvatić
 F05 | User profiles - Superadmin | Types of user pfoiles available in the app | 
-F05.A | Gym users | Users that come to train in the gym and their data | Costa Bushnaq
-F05.B | Coach | Gym coaches and their data | Costa Bushnaq
-F05.C | Admin | Gym owner and admin | Costa Bushnaq
+F05.A | Gym users | Users that come to train in the gym. They sign up via app, they pay membership fee via app | Costa Bushnaq
+F05.B | Coach | Gym coach can fill in his data, some kind of description and can make his own scheduele. He can also add gym users. | Costa Bushnaq
+F05.C | Admin | Gym owner and admin can add or remove coaches and gym users. He also has insight into gym statistics and in general he is the person in charge of the gym and the app.| Costa Bushnaq
 F06 | Statistics | Gym owner and admin has review of all relevant statistics for the gym (users, trainigs, presence ect.) | Costa Bushnaq   
 
 ## Technologies and equipment
