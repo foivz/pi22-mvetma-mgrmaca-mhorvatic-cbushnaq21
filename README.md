@@ -61,15 +61,15 @@ F01 | Credentials | To begin with, the user must register in order to be able to
 F01.A | Sign Up | User needs to create account for him to be able to use the app | Marko Grmača
 F01.B | Login | Before he is able to use the app, user needs to login | Marko Grmača
 F01.C | Password reset | User can request password reset | Marko Grmača
-F02 | Reminders | User gets reminders for his appointments, reminders are sent via e-mail. | Marko Grmača
-F03 | Membership fee | User pays gym membership fee every month | 
-F03.A | Consult your due invoices | User pays his monthly/anual membership fee | Mislav Vetma
-F03.B | Generate + send PDF of invoice | The user receives the PDF via email about the paid invoice | Mislav Vetma
-F04 | Training Managment | User can choose between training types and add them to the schedule | 
-F04.A | Apply for training | User chooses training type group training or individual (with coach) | Maja Horvatić
-F04.B | Pay chosen training plan | After the user has selected his training plan, a bill is sent to him to be payed | Maja Horvatić
-F04.C | Choose timetable | User chooses appointment of training | Maja Horvatić
-F04.D | Reminders and notifications |  The coach gets e-mail notification when client is trying to hire him | Maja Horvatić
+F02 | Membership fee | User pays gym membership fee every month | 
+F02.A | Consult your due invoices | User pays his monthly/anual membership fee | Mislav Vetma
+F02.B | Generate + send PDF of invoice | The user receives the PDF via email about the paid invoice | Mislav Vetma
+F03 | Training Managment | User can choose between training types and add them to the schedule | 
+F03.A | Apply for training | User chooses training type group training or individual (with coach) | Maja Horvatić
+F03.B | Pay chosen training plan | After the user has selected his training plan, a bill is sent to him to be payed | Maja Horvatić
+F03.C | Choose timetable | User chooses appointment of training | Maja Horvatić
+F03.D | Notifications |  The coach gets e-mail notification when client is trying to hire him | Maja Horvatić
+F04 | Reminders | User gets reminders for his appointments, reminders are sent via e-mail. | Marko Grmača
 F05 | User profiles - Superadmin | Types of user pfoiles available in the app | 
 F05.A | Gym users | Users that come to train in the gym. They sign up via app, they pay membership fee via app | Costa Bushnaq
 F05.B | Coach | Gym coach can fill in his data, some kind of description and can make his own scheduele. He can also add gym users. | Costa Bushnaq
