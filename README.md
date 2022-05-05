@@ -58,7 +58,7 @@ And finally, we come to the owner of the gym. The owner of the gym has an insigh
 No  | Feature       | Description | Responsible member
 --- | ------------- | ----------- | ------------------
 F01 | Credentials | To begin with, the user must register in order to be able to use the application or log in in the future. | 
-F01.A | Sign Up | User needs to create account for him to be able to use the app | Marko Grmača
+| A | Sign Up | User needs to create account for him to be able to use the app | Marko Grmača
 F01.B | Login | Before he is able to use the app, user needs to login | Marko Grmača
 F01.C | Password reset | User can request password reset | Marko Grmača
 F02 | Membership fee | User pays gym membership fee every month | 
