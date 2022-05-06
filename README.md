@@ -57,19 +57,19 @@ And finally, we come to the owner of the gym. The owner of the gym has an insigh
 
 No  | Feature       | Description | Responsible member
 --- | ------------- | ----------- | ------------------
-F01 | Credentials | To begin with, the user must register in order to be able to use the application or log in in the future. | 
-F01.A | Sign Up | User needs to create account for him to be able to use the app | Marko Grmača
-F01.B | Login | Before he is able to use the app, user needs to login | Marko Grmača
-F01.C | Password reset | User can request password reset | Marko Grmača
-F02 | Membership fee | User pays gym membership fee every month | 
-F02.A | Consult your due invoices | User pays his monthly/anual membership fee | Mislav Vetma
-F02.B | Generate + send PDF of invoice | The user receives the PDF via email about the paid invoice | Mislav Vetma
-F03 | Training Managment  | User can choose between training types and add them to the schedule | 
-F03.A | Apply for training | User chooses training type group training or individual (with coach) | Maja Horvatić
-F03.B | Pay chosen training plan | After the user has selected his training plan, a bill is sent to him to be payed | Maja Horvatić
-F04 | Training schedule | All actions regarding training schedule | 
-F04.A | Choose timetable | User chooses appointment of training | Maja Horvatić
-F04.B | Notifications |  The coach gets e-mail notification when client is trying to hire him | Maja Horvatić
+F01 | Credentials | To begin with, the user must register in order to be able to use the application or log in in the future. | Marko Grmača
+F01.A | Sign Up | User needs to create account for him to be able to use the app | 
+F01.B | Login | Before he is able to use the app, user needs to login | 
+F01.C | Password reset | User can request password reset | 
+F02 | Membership fee | User pays gym membership fee every month | Mislav Vetma
+F02.A | Consult your due invoices | User pays his monthly/anual membership fee | 
+F02.B | Generate + send PDF of invoice | The user receives the PDF via email about the paid invoice | 
+F03 | Training Managment  | User can choose between training types and add them to the schedule | Maja Horvatić
+F03.A | Apply for training | User chooses training type group training or individual (with coach) | 
+F03.B | Pay chosen training plan | After the user has selected his training plan, a bill is sent to him to be payed | 
+F04 | Training schedule | All actions regarding training schedule | Maja Horvatić
+F04.A | Choose timetable | User chooses appointment of training | 
+F04.B | Notifications |  The coach gets e-mail notification when client is trying to hire him | 
 F05 | Reminders | User gets reminders for his appointments, reminders are sent via e-mail. | Marko Grmača
 F06 | Coach | Coach decides if he accepts or rejects User/Client | Maja Horvatić
 F07 | Coach Profiles | Coaches can fill in their info (i.e. education) which will be visible to the clients who are planing to hire him | Mislav Vetma
