@@ -62,20 +62,19 @@ F01.A | Sign Up | User needs to create account for him to be able to use the app
 F01.B | Login | Before he is able to use the app, user needs to login | 
 F01.C | Password reset | User can request password reset | 
 F02 | Membership fee | User pays gym membership fee every month | Mislav Vetma
-F02.A | Consult your due invoices | User pays his monthly/anual membership fee | 
-F02.B | Generate + send PDF of invoice | The user receives the PDF via email about the paid invoice | 
-F03 | Training Managment  | User can choose between training types and add them to the schedule | Maja Horvatić
-F03.A | Apply for training | User chooses training type group training or individual (with coach) | 
-F03.B | Pay chosen training plan | After the user has selected his training plan, a bill is sent to him to be payed | 
-F04 | Training schedule | All actions regarding training schedule | Maja Horvatić
-F04.A | Choose timetable | User chooses appointment of training | 
-F04.B | Notifications |  The coach gets e-mail notification when client is trying to hire him | 
-F05 | Reminders | User gets reminders for his appointments, reminders are sent via e-mail. | Marko Grmača
-F06 | Coach | Coach decides if he accepts or rejects User/Client | Maja Horvatić
-F07 | Coach Profiles | Coaches can fill in their info (i.e. education) which will be visible to the clients who are planing to hire him | Mislav Vetma
-F08 | User profiles - Superadmin | Superadmin is able to create multiple roles for the app. First role would be admin, he is a gym owner and he will have regular admin privileges (such as, being able to track statistics, cann create coaches, can approve new users/clients and whatever he need for his gym to function). Second role is coach. Coach can edit his profile, training sessions etc. Final role is regular User/Client and his role is to apply into the app, pay membership fee and, if user/client wants to, take training type | Costa Bushnaq 
-F09 | Statistics | Gym owner and admin has review of all relevant statistics for the gym (users, trainigs, presence ect.) | Costa Bushnaq   
-F10 | PDF bill generator | App generates PDF bill for gym that uses our app | Costa Bushnaq 
+F03 | Generate + send PDF of invoice | The user receives the PDF via email about the paid invoice | Mislav Vetma
+F04 | Training Managment  | User can choose between training types and add them to the schedule | Maja Horvatić
+F04.A | Apply for training | User chooses training type group training or individual (with coach) | 
+F04.B | Pay chosen training plan | After the user has selected his training plan, a bill is sent to him to be payed | 
+F05 | Training schedule | All actions regarding training schedule | Maja Horvatić
+F05.A | Choose timetable | User chooses appointment of training | 
+F05.B | Notifications |  The coach gets e-mail notification when client is trying to hire him | 
+F06 | Reminders | User gets reminders for his appointments, reminders are sent via e-mail. | Marko Grmača
+F07 | Coach | Coach decides if he accepts or rejects User/Client | Maja Horvatić
+F08 | Coach Profiles | Coaches can fill in their info (i.e. education) which will be visible to the clients who are planing to hire him | Mislav Vetma
+F09 | User profiles - Superadmin | Superadmin is able to create multiple roles for the app. First role would be admin, he is a gym owner and he will have regular admin privileges (such as, being able to track statistics, cann create coaches, can approve new users/clients and whatever he need for his gym to function). Second role is coach. Coach can edit his profile, training sessions etc. Final role is regular User/Client and his role is to apply into the app, pay membership fee and, if user/client wants to, take training type | Costa Bushnaq 
+F10 | Statistics | Gym owner and admin has review of all relevant statistics for the gym (users, trainigs, presence ect.) | Costa Bushnaq   
+F11 | PDF bill generator | App generates PDF bill for gym that uses our app | Costa Bushnaq 
 
 ## Technologies and equipment
 The technologies and tools used in the laboratory exercises of the course will be used in the development of software solutions.
