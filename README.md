@@ -70,11 +70,9 @@ F03.B | Pay chosen training plan | After the user has selected his training plan
 F03.C | Choose timetable | User chooses appointment of training | Maja Horvatić
 F03.D | Notifications |  The coach gets e-mail notification when client is trying to hire him | Maja Horvatić
 F04 | Reminders | User gets reminders for his appointments, reminders are sent via e-mail. | Marko Grmača
-F05 | User profiles - Superadmin | Types of user pfoiles available in the app | 
-F05.A | Gym users | Users that come to train in the gym. They sign up via app, they pay membership fee via app | Costa Bushnaq
-F05.B | Coach | Gym coach can fill in his data, some kind of description and can make his own scheduele. He can also add gym users. | Costa Bushnaq
-F05.C | Admin | Gym owner and admin can add or remove coaches and gym users. He also has insight into gym statistics and in general he is the person in charge of the gym and the app.| Costa Bushnaq
-F06 | Statistics | Gym owner and admin has review of all relevant statistics for the gym (users, trainigs, presence ect.) | Costa Bushnaq   
+F05 | Coach Profiles | Coaches can fill in their info (i.e. education) which will be visible to the clients who are planing to hire him | Mislav Vetma
+F06 | User profiles - Superadmin | Superadmin is able to create multiple roles for the app. First role would be admin, he is a gym owner and he will have regular admin privileges (such as, being able to track statistics, cann create coaches, can approve new users/clients and whatever he need for his gym to function). Second role is coach. Coach can edit his profile, training sessions etc. Final role is regular User/Client and his role is to apply into the app, pay membership fee and, if user/client wants to, take training type | Costa Bushnaq 
+F07 | Statistics | Gym owner and admin has review of all relevant statistics for the gym (users, trainigs, presence ect.) | Costa Bushnaq   
 
 ## Technologies and equipment
 The technologies and tools used in the laboratory exercises of the course will be used in the development of software solutions.
