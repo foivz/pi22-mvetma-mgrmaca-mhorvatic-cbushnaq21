@@ -8,5 +8,9 @@ namespace GymBussinessLogic.Interfaces
 {
     public interface IBillController
     {
+        bool AddNewBill(string billId, string amount, DateTime dueDate, string userEmail, string billReferenceNumber);
+        bool UpdateBill(string billId, string amount, DateTime dueDate, string userEmail, string billReferenceNumber);
+        bool DeleteBill(string billId, string amount, DateTime dueDate, string userEmail, string billReferenceNumber);
+
     }
 }
