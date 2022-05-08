@@ -1,4 +1,4 @@
-Unfortnualy picture quality was not on the highest level. Pdf version of ProjectDocumentation has been uploaded with higher quality pictures.
+Unfortnualy picture quality was not on the highest level. Pdf version of TechnicalDocumentation has been uploaded with higher quality pictures.
 
 Duties of team members:
 Each team member had to make textual discription, diagrams and some implementation for his/hers feature. 
