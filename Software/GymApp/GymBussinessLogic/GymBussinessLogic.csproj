@@ -35,5 +35,14 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GymData\GymData.csproj">
+      <Project>{3a2c8a04-f7e0-4566-8427-9f4d6cff11d3}</Project>
+      <Name>GymData</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Interfaces\IBillController.cs" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
