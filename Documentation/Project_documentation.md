@@ -1,3 +1,6 @@
+Unfortnualy picture quality was not on the highest level. Pdf version of ProjectDocumentation has been uploaded with higher quality pictures.
+
+
 **PROJECT DOCUMENTATION**
 
 1. **METHODOLOGICAL APPROACH**
@@ -81,4 +84,3 @@ Marko Grmača - gant chart
 Mislav Vetma - costs and offer
 Maja Horvatić - textual description
 
-Unfortnualy picture quality was not on the highest level. Pdf version of ProjectDocumentation has been uploaded with higher quality pictures.
