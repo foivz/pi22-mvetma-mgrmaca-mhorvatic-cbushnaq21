@@ -75,3 +75,10 @@ The following figure shows costs in the form of hours worked:
 The following figure shows the total cost of working hours and equipment.
 
 Our offer for creating an application is as follows:
+
+Duties for project documentation:
+Marko Grmača - gant chart
+Mislav Vetma - costs and offer
+Maja Horvatić - textual description
+
+Unfortnualy picture quality was not on the highest level. Pdf version of ProjectDocumentation has been uploaded with higher quality pictures.
