@@ -75,3 +75,4 @@ The following figure shows costs in the form of hours worked:
 The following figure shows the total cost of working hours and equipment.
 
 Our offer for creating an application is as follows:
+![alt.text](Documentation/image.png)
