@@ -52,6 +52,12 @@
     <Compile Include="F02andF03Form\FrmPayment.Designer.cs">
       <DependentUpon>FrmPayment.cs</DependentUpon>
     </Compile>
+    <Compile Include="F08CoachProfilesForms\FrmCoachProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F08CoachProfilesForms\FrmCoachProfile.Designer.cs">
+      <DependentUpon>FrmCoachProfile.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmHomePage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -62,6 +68,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="F02andF03Form\FrmPayment.resx">
       <DependentUpon>FrmPayment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F08CoachProfilesForms\FrmCoachProfile.resx">
+      <DependentUpon>FrmCoachProfile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmHomePage.resx">
       <DependentUpon>FrmHomePage.cs</DependentUpon>
