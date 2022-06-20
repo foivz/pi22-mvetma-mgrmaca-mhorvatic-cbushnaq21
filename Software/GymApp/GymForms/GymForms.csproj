@@ -58,6 +58,12 @@
     <Compile Include="F08CoachProfilesForms\FrmCoachProfile.Designer.cs">
       <DependentUpon>FrmCoachProfile.cs</DependentUpon>
     </Compile>
+    <Compile Include="F08CoachProfilesForms\FrmEditCoachProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F08CoachProfilesForms\FrmEditCoachProfile.Designer.cs">
+      <DependentUpon>FrmEditCoachProfile.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmHomePage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,6 +77,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="F08CoachProfilesForms\FrmCoachProfile.resx">
       <DependentUpon>FrmCoachProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F08CoachProfilesForms\FrmEditCoachProfile.resx">
+      <DependentUpon>FrmEditCoachProfile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmHomePage.resx">
       <DependentUpon>FrmHomePage.cs</DependentUpon>
