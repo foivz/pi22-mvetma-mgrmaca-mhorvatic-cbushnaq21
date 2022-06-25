@@ -8,14 +8,16 @@ namespace GymData
 {
     public class Coach
     {
+        public int CoachId { get; set; }    
         public string CoachName { get; set; }
         public string CoachSurname { get; set; }
         public string CoachEducation { get; set; }
         public string CoachNumber { get; set; }
         public string CoachEmail { get; set; }
 
-        public Coach(string coachName, string coachSurname, string coachEducation, string coachNumber, string coachEmail)
+        public Coach(int id, string coachName, string coachSurname, string coachEducation, string coachNumber, string coachEmail)
         {
+            CoachId = id;
             CoachName = coachName;
             CoachSurname = coachSurname;
             CoachEducation = coachEducation;
