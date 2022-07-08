@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="1c84f045a6624ce0832004bffac265eb" Name="Diagram1">
+        <EntityTypeShape EntityType="PI2212_DBModel.Appointment" Width="1.5" PointX="10.5" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PI2212_DBModel.Bill" Width="1.5" PointX="5.25" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PI2212_DBModel.Notification" Width="1.5" PointX="8.25" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PI2212_DBModel.Notification_type" Width="1.5" PointX="6" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PI2212_DBModel.Payment" Width="1.5" PointX="7.5" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PI2212_DBModel.Role" Width="1.5" PointX="0.75" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PI2212_DBModel.Training" Width="1.5" PointX="8.25" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PI2212_DBModel.User" Width="1.5" PointX="3" PointY="3.75" IsExpanded="true" />
+        <AssociationConnector Association="PI2212_DBModel.Appointment_Training_training_id_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="PI2212_DBModel.Bill_User_user_id_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="PI2212_DBModel.Payment_Bill_bill_id_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="PI2212_DBModel.FK_Notification_User" ManuallyRouted="false" />
+        <AssociationConnector Association="PI2212_DBModel.Notification_Notification_type_type_id_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="PI2212_DBModel.User_Role_role_id_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="PI2212_DBModel.Training_User_user_id_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="PI2212_DBModel.training_appointment" ManuallyRouted="false" />
+        <AssociationConnector Association="PI2212_DBModel.user_appointment" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

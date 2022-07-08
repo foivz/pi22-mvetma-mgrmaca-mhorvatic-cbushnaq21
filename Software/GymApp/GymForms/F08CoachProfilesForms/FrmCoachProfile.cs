@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using GymBussinessLogic;
 
 namespace GymForms.F08CoachProfilesForms
 {
@@ -15,6 +16,16 @@ namespace GymForms.F08CoachProfilesForms
         public FrmCoachProfile()
         {
             InitializeComponent();
+        }
+
+        private void FrmCoachProfile_Load(object sender, EventArgs e)
+        {
+            FillCoachData();
+        }
+
+        private void FillCoachData()
+        {
+           //txtCoachName.Text = UserManipulation.GetCurrentUser().
         }
     }
 }

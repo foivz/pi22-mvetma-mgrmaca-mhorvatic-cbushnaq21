@@ -159,6 +159,7 @@
             this.Controls.Add(this.label1);
             this.Name = "FrmCoachProfile";
             this.Text = "Coach profile";
+            this.Load += new System.EventHandler(this.FrmCoachProfile_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
