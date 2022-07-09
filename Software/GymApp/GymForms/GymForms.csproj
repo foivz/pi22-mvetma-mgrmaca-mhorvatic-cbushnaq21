@@ -50,6 +50,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="F02andF03Form\FrmmembershipFee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F02andF03Form\FrmmembershipFee.Designer.cs">
+      <DependentUpon>FrmmembershipFee.cs</DependentUpon>
+    </Compile>
     <Compile Include="F02andF03Form\FrmPayment.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,6 +82,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="F02andF03Form\FrmmembershipFee.resx">
+      <DependentUpon>FrmmembershipFee.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="F02andF03Form\FrmPayment.resx">
       <DependentUpon>FrmPayment.cs</DependentUpon>
     </EmbeddedResource>

@@ -25,5 +25,24 @@ namespace GymData
             }
         }
 
+        
+        public List<Bill> GetUnpaidBills(User user)
+        {
+            var query = from u in user.Bills
+                        where u.user_id == user.user_id && u.payed == 0
+                        select u;
+            List<Bill> unpaidBills = query.ToList();
+            return  unpaidBills;
+        }
+
+        public List<Bill> GetPaidBills(User user)
+        {
+            var query = from u in user.Bills
+                        where u.user_id == user.user_id && u.payed == 1
+                        select u;
+            List<Bill> paidBills = query.ToList();
+            return paidBills;
+        }
+
     }
 }
