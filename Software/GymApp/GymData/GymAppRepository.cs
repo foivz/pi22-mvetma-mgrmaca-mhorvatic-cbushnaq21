@@ -10,7 +10,6 @@ namespace GymData
     {
 
         public static User CurrentUser { get; set; }
-        public static Role CurrentUserRole { get; set; }
         public void EditCoachData(User user)
         {
             using (var context = new PI2212_DBEntities())
@@ -25,5 +24,6 @@ namespace GymData
                 context.SaveChanges();
             }
         }
+
     }
 }

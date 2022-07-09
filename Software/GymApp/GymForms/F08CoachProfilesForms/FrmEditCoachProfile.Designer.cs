@@ -95,6 +95,7 @@
             this.btnSaveChanges.TabIndex = 5;
             this.btnSaveChanges.Text = "Save changes";
             this.btnSaveChanges.UseVisualStyleBackColor = true;
+            this.btnSaveChanges.Click += new System.EventHandler(this.btnSaveChanges_Click);
             // 
             // btnCancleChanges
             // 
@@ -104,6 +105,7 @@
             this.btnCancleChanges.TabIndex = 6;
             this.btnCancleChanges.Text = "Cancel";
             this.btnCancleChanges.UseVisualStyleBackColor = true;
+            this.btnCancleChanges.Click += new System.EventHandler(this.btnCancleChanges_Click);
             // 
             // txtEditCoachName
             // 
@@ -159,6 +161,7 @@
             this.Controls.Add(this.lblEditName);
             this.Name = "FrmEditCoachProfile";
             this.Text = "Edit profile";
+            this.Load += new System.EventHandler(this.FrmEditCoachProfile_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
