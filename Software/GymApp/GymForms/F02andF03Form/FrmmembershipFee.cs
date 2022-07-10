@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GymBussinessLogic;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,8 +13,10 @@ namespace GymForms.F02andF03Form
 {
     public partial class FrmmembershipFee : Form
     {
+        public MiddleMan userManipulation;
         public FrmmembershipFee()
         {
+            userManipulation = new MiddleMan();  
             InitializeComponent();
         }
 
@@ -24,12 +27,12 @@ namespace GymForms.F02andF03Form
 
         private void FillUnpaidBills()
         {
-            throw new NotImplementedException();
+            dgvUnpaidBills.DataSource = userManipulation.UnpaidBills();
         }
 
         private void FillPaidBills()
         {
-            throw new NotImplementedException();
+            dgvPaidBills.DataSource = userManipulation.PaidBills();
         }
 
         private void btnReturnMembershipFee_Click(object sender, EventArgs e)
@@ -38,8 +41,9 @@ namespace GymForms.F02andF03Form
         }
 
         private void btnPaySelectedBill_Click(object sender, EventArgs e)
-        {
-            FrmPayment frm = new FrmPayment();
+        {   
+            BBill selectedBill = dgvUnpaidBills.CurrentRow.DataBoundItem as BBill;
+            FrmPayment frm = new FrmPayment(selectedBill);
             frm.ShowDialog();
 
             RefreshGUI();

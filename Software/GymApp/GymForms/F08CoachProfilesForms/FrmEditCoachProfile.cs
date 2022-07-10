@@ -16,7 +16,7 @@ namespace GymForms.F08CoachProfilesForms
         BUser user;
         public FrmEditCoachProfile()
         {
-            user = UserManipulation.GetCurrentUser();
+            user = MiddleMan.GetCurrentUser();
             InitializeComponent();
             
         }
@@ -42,13 +42,13 @@ namespace GymForms.F08CoachProfilesForms
 
         private void btnSaveChanges_Click(object sender, EventArgs e)
         {
-            UserManipulation userManipulation = new UserManipulation();
+            MiddleMan userManipulation = new MiddleMan();
 
-            UserManipulation.CurrentBUser.user_name = txtEditCoachName.Text;
-            UserManipulation.CurrentBUser.user_surname = txtEditCoachSurname.Text;
-            UserManipulation.CurrentBUser.education = txtEditCoachEducation.Text;
-            UserManipulation.CurrentBUser.phone = txtEditCOachNumber.Text;
-            UserManipulation.CurrentBUser.email = txtEditCoachEmail.Text;
+            MiddleMan.CurrentBUser.user_name = txtEditCoachName.Text;
+            MiddleMan.CurrentBUser.user_surname = txtEditCoachSurname.Text;
+            MiddleMan.CurrentBUser.education = txtEditCoachEducation.Text;
+            MiddleMan.CurrentBUser.phone = txtEditCOachNumber.Text;
+            MiddleMan.CurrentBUser.email = txtEditCoachEmail.Text;
 
             userManipulation.SaveEditedData();                    
         

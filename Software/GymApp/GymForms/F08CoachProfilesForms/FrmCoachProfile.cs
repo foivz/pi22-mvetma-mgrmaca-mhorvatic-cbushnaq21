@@ -20,7 +20,7 @@ namespace GymForms.F08CoachProfilesForms
 
         private void FillCoachData()
         {
-            BUser user = UserManipulation.GetCurrentUser();
+            BUser user = MiddleMan.GetCurrentUser();
             txtCoachName.Text = user.user_name;
             txtCoachSurname.Text = user.user_surname;
             txtCoachEducation.Text = user.education;

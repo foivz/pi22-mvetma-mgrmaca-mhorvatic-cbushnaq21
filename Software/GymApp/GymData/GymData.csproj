@@ -53,6 +53,7 @@
     <Compile Include="Bill.cs">
       <DependentUpon>GymAppModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Card.cs" />
     <Compile Include="GymAppModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

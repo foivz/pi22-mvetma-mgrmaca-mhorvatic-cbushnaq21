@@ -125,6 +125,10 @@
       <Project>{1c17e1db-8022-48bd-a59b-59baea1847c8}</Project>
       <Name>GymBussinessLogic</Name>
     </ProjectReference>
+    <ProjectReference Include="..\GymData\GymData.csproj">
+      <Project>{3a2c8a04-f7e0-4566-8427-9f4d6cff11d3}</Project>
+      <Name>GymData</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

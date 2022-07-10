@@ -148,6 +148,7 @@
             this.btnPay.TabIndex = 12;
             this.btnPay.Text = "Pay";
             this.btnPay.UseVisualStyleBackColor = true;
+            this.btnPay.Click += new System.EventHandler(this.btnPay_Click);
             // 
             // btnReturnPay
             // 
@@ -157,6 +158,7 @@
             this.btnReturnPay.TabIndex = 13;
             this.btnReturnPay.Text = "Return";
             this.btnReturnPay.UseVisualStyleBackColor = true;
+            this.btnReturnPay.Click += new System.EventHandler(this.btnReturnPay_Click);
             // 
             // FrmPayment
             // 
@@ -179,6 +181,7 @@
             this.Controls.Add(this.lblName);
             this.Name = "FrmPayment";
             this.Text = "Payment";
+            this.Load += new System.EventHandler(this.FrmPayment_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
