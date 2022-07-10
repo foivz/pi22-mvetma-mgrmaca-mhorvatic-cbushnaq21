@@ -42,5 +42,10 @@ namespace GymForms.F08CoachProfilesForms
             FillCoachData();
             
         }
+
+        private void btnReturn_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

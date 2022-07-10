@@ -1,6 +1,6 @@
 ﻿namespace GymForms.F02andF03Form
 {
-    partial class FrmmembershipFee
+    partial class FrmMembershipFee
     {
         /// <summary>
         /// Required designer variable.

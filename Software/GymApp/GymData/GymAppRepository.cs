@@ -20,7 +20,14 @@ namespace GymData
                             select u;
 
                 User currentUser = query.Single();
-                currentUser = user;
+                currentUser.email = user.email;
+                currentUser.username = user.username;
+                currentUser.education = user.education;
+                currentUser.user_name = user.user_name;
+                currentUser.user_surname = user.user_surname;
+                currentUser.phone = user.phone;
+
+                CurrentUser = currentUser;
 
                 context.SaveChanges();
             }
@@ -58,6 +65,25 @@ namespace GymData
             List<Bill> paidBills = query.ToList();
             return paidBills;
         }
+
+        public bool SaveNewPassword(string email, string password)
+        {
+            using (var context = new PI2212_DBEntities())
+            {
+
+                var query = from u in context.Users where u.email.Equals(email) select u;
+
+                User user = query.Single();
+                user.passwordium = password;
+                int res = context.SaveChanges();
+                if (res > 0)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
 
         public void GenerateBill()
         {
@@ -101,6 +127,37 @@ namespace GymData
                 List<Notification> notifications = query.ToList();
                 return notifications;
             }
+        }
+
+        public bool Login(string username, string password)
+        {
+            using (var context = new PI2212_DBEntities())
+            {
+                var query = from n in context.Users
+                            where n.username.Equals(username.Trim()) && n.passwordium.Equals(password)
+                            select n;
+
+                CurrentUser = query.First();
+                var query2 = from b in context.Bills where b.user_id == CurrentUser.user_id select b;
+                CurrentUser.Bills = query2.ToList();
+                if(CurrentUser!=null) return true;
+            }
+            return false;
+        }
+
+        public bool RegisterUser(User user)
+        {
+            using (var context = new PI2212_DBEntities())
+            {
+
+                context.Users.Add(user);
+                int res = context.SaveChanges();
+                if (res > 0)
+                {
+                    return true;
+                }
+            }
+            return false;
         }
 
         public List<Appointment> GetAppointments()

@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -13,6 +14,8 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -37,7 +40,14 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -50,11 +60,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="F02andF03Form\FrmmembershipFee.cs">
+    <Compile Include="F01LoginRegister\FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="F02andF03Form\FrmmembershipFee.Designer.cs">
-      <DependentUpon>FrmmembershipFee.cs</DependentUpon>
+    <Compile Include="F01LoginRegister\FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="F01LoginRegister\FrmPasswordReset.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F01LoginRegister\FrmPasswordReset.Designer.cs">
+      <DependentUpon>FrmPasswordReset.cs</DependentUpon>
+    </Compile>
+    <Compile Include="F01LoginRegister\FrmRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F01LoginRegister\FrmRegister.Designer.cs">
+      <DependentUpon>FrmRegister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="F02andF03Form\FrmMembershipFee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F02andF03Form\FrmMembershipFee.Designer.cs">
+      <DependentUpon>FrmMembershipFee.cs</DependentUpon>
     </Compile>
     <Compile Include="F02andF03Form\FrmPayment.cs">
       <SubType>Form</SubType>
@@ -74,16 +102,37 @@
     <Compile Include="F08CoachProfilesForms\FrmEditCoachProfile.Designer.cs">
       <DependentUpon>FrmEditCoachProfile.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmCoachHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCoachHome.Designer.cs">
+      <DependentUpon>FrmCoachHome.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmHomePage.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmHomePage.Designer.cs">
       <DependentUpon>FrmHomePage.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmUserHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmUserHome.Designer.cs">
+      <DependentUpon>FrmUserHome.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="F02andF03Form\FrmmembershipFee.resx">
-      <DependentUpon>FrmmembershipFee.cs</DependentUpon>
+    <EmbeddedResource Include="F01LoginRegister\FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F01LoginRegister\FrmPasswordReset.resx">
+      <DependentUpon>FrmPasswordReset.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F01LoginRegister\FrmRegister.resx">
+      <DependentUpon>FrmRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F02andF03Form\FrmMembershipFee.resx">
+      <DependentUpon>FrmMembershipFee.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="F02andF03Form\FrmPayment.resx">
       <DependentUpon>FrmPayment.cs</DependentUpon>
@@ -94,8 +143,14 @@
     <EmbeddedResource Include="F08CoachProfilesForms\FrmEditCoachProfile.resx">
       <DependentUpon>FrmEditCoachProfile.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmCoachHome.resx">
+      <DependentUpon>FrmCoachHome.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmHomePage.resx">
       <DependentUpon>FrmHomePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmUserHome.resx">
+      <DependentUpon>FrmUserHome.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -107,6 +162,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -131,4 +187,12 @@
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
 </Project>

@@ -11,10 +11,10 @@ using System.Windows.Forms;
 
 namespace GymForms.F02andF03Form
 {
-    public partial class FrmmembershipFee : Form
+    public partial class FrmMembershipFee : Form
     {
         public MiddleMan userManipulation;
-        public FrmmembershipFee()
+        public FrmMembershipFee()
         {
             userManipulation = new MiddleMan();  
             InitializeComponent();
@@ -41,10 +41,13 @@ namespace GymForms.F02andF03Form
         }
 
         private void btnPaySelectedBill_Click(object sender, EventArgs e)
-        {   
-            BBill selectedBill = dgvUnpaidBills.CurrentRow.DataBoundItem as BBill;
-            FrmPayment frm = new FrmPayment(selectedBill);
-            frm.ShowDialog();
+        {
+            if (dgvUnpaidBills.CurrentRow != null)
+            {
+                BBill selectedBill = dgvUnpaidBills.CurrentRow.DataBoundItem as BBill;
+                FrmPayment frm = new FrmPayment(selectedBill);
+                frm.ShowDialog();
+            }
 
             RefreshGUI();
         }

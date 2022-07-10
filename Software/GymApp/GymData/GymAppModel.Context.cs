@@ -18,6 +18,7 @@ namespace GymData
         public PI2212_DBEntities()
             : base("name=PI2212_DBEntities")
         {
+            this.Configuration.LazyLoadingEnabled = false;
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
