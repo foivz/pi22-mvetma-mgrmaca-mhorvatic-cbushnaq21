@@ -103,6 +103,18 @@ namespace GymData
             }
         }
 
+        public List<Appointment> GetAppointments()
+        {
+            using (var context = new PI2212_DBEntities())
+            {
+                var query = from a in context.Appointments
+                            select a ;
+
+                List<Appointment> appointments = query.ToList();
+                return appointments;
+            }
+        }
+
         public void SetNotificationSent(Notification notification)
         {
             using (var context = new PI2212_DBEntities())
@@ -113,6 +125,7 @@ namespace GymData
 
                 Notification notification1 = query.Single();
                 notification1.sent = 1;
+              
 
                 context.SaveChanges();
             }

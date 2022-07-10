@@ -35,6 +35,7 @@ namespace GymAppService
             List<User> users = gymAppRepository.GetAllUsers();
             SendAllNotifications(users);
             GenerateBills(users);
+            SendAppointmentReminder();
         }
 
         private void GenerateBills(List<User> users)
@@ -73,6 +74,31 @@ namespace GymAppService
                 {
                     SendEmail(user.email, notification);
                     gymAppRepository.SetNotificationSent(notification);
+                }
+                
+            }
+        }
+
+        private void SendAppointmentReminder()
+        {
+            List<Appointment> appointments = gymAppRepository.GetAppointments();
+            foreach (Appointment appointment in appointments)
+            {
+                foreach(User user in appointment.Users)
+                {
+                    DateTimeOffset dateTimeOffset1 = new DateTimeOffset(appointment.start_time.Value.ToLocalTime());
+                    DateTimeOffset dateTimeOffset2 = DateTimeOffset.Now;
+
+                    long time1 = dateTimeOffset1.ToUnixTimeSeconds();
+                    long time2 = dateTimeOffset2.ToUnixTimeSeconds();
+                    if( time1-time2 < 86400 && time1-time2 > 86381 )
+                    {
+                        Notification notification = new Notification();
+                        notification.reminder_description = "Reminder for appointment: " + appointment.appointment_description +
+                            ", " + 
+                            appointment.start_time.ToString();
+                        SendEmail(user.email,notification);
+                    }
                 }
             }
         }
