@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GymData", "GymData\GymData.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GymAppService", "GymAppService\GymAppService.csproj", "{019F8579-B322-46D3-8A3F-90E488655018}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SetupGymApp", "SetupGymApp\SetupGymApp.vdproj", "{921BF547-067C-4B20-854F-B737C80203D8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,8 @@ Global
 		{019F8579-B322-46D3-8A3F-90E488655018}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{019F8579-B322-46D3-8A3F-90E488655018}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{019F8579-B322-46D3-8A3F-90E488655018}.Release|Any CPU.Build.0 = Release|Any CPU
+		{921BF547-067C-4B20-854F-B737C80203D8}.Debug|Any CPU.ActiveCfg = Debug
+		{921BF547-067C-4B20-854F-B737C80203D8}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

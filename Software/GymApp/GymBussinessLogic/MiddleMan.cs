@@ -26,17 +26,20 @@ namespace GymBussinessLogic
         {
             User user = GymAppRepository.CurrentUser;
             BUser bUser = new BUser();
-            bUser.user_id = user.user_id;
-            bUser.user_name = user.user_name;
-            bUser.user_surname = user.user_surname;
-            bUser.username = user.username;
-            bUser.email = user.email;
-            bUser.passwordium = user.passwordium;
-            bUser.role_id = user.role_id;
-            bUser.phone = user.phone;
-            bUser.education = user.education;
-            bUser.registration_date = user.registration_date;
-            CurrentBUser = bUser;
+            if(user != null)
+            {
+                bUser.user_id = user.user_id;
+                bUser.user_name = user.user_name;
+                bUser.user_surname = user.user_surname;
+                bUser.username = user.username;
+                bUser.email = user.email;
+                bUser.passwordium = user.passwordium;
+                bUser.role_id = user.role_id;
+                bUser.phone = user.phone;
+                bUser.education = user.education;
+                bUser.registration_date = user.registration_date;
+                CurrentBUser = bUser;
+            }
            
             return CurrentBUser;
         }

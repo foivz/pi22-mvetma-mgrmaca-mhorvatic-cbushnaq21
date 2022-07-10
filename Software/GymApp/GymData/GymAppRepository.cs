@@ -137,9 +137,12 @@ namespace GymData
                             where n.username.Equals(username.Trim()) && n.passwordium.Equals(password)
                             select n;
 
-                CurrentUser = query.First();
-                var query2 = from b in context.Bills where b.user_id == CurrentUser.user_id select b;
-                CurrentUser.Bills = query2.ToList();
+                CurrentUser = query.SingleOrDefault();
+                if(CurrentUser != null)
+                {
+                    var query2 = from b in context.Bills where b.user_id == CurrentUser.user_id select b;
+                    CurrentUser.Bills = query2.ToList();
+                }
                 if(CurrentUser!=null) return true;
             }
             return false;
