@@ -57,7 +57,7 @@ namespace GymAppService
 
                     newBill.amount = 199.99;
                     newBill.due_date = bill.due_date.AddDays(30);
-                    bill.User = user;
+                    bill.user_id = user.user_id;
                     gymAppRepository.CreateBill(bill);
                 }
                 
