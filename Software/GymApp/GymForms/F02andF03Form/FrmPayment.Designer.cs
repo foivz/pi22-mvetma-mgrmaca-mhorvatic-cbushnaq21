@@ -182,6 +182,7 @@
             this.Name = "FrmPayment";
             this.Text = "Payment";
             this.Load += new System.EventHandler(this.FrmPayment_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmPayment_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

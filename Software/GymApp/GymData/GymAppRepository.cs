@@ -85,11 +85,6 @@ namespace GymData
         }
 
 
-        public void GenerateBill()
-        {
-
-        }
-
         public bool CreateBill(Bill bill)
         {
             using (var context = new PI2212_DBEntities())
@@ -104,7 +99,7 @@ namespace GymData
             }
             return false;
         }
-
+        // Marko Grmača -------------------------------------------------------------------------
         public List<User> GetAllUsers()
         {
             using (var context = new PI2212_DBEntities())
@@ -190,7 +185,7 @@ namespace GymData
                 context.SaveChanges();
             }
         }
-
+        // Mislav Vetma ------------------------------------------------------------------------
         public Bill GetLastBill(User user)
         {
             using (var context = new PI2212_DBEntities())

@@ -44,6 +44,8 @@ namespace GymBussinessLogic
             return CurrentBUser;
         }
 
+        // Marko Grmača ----------------------------------------------------------------------
+
         public bool ResetPassword(string email)
         {
             Random random = new Random();
@@ -89,7 +91,7 @@ namespace GymBussinessLogic
             CurrentBUser = null;
             GymAppRepository.CurrentUser = null;
         }
-
+        // Mislav Vetma -------------------------------------------------------------
         public void SaveEditedData()
         {
             GymAppRepository gymAppRepository = new GymAppRepository();
@@ -110,6 +112,7 @@ namespace GymBussinessLogic
             gymAppRepository.EditCoachData(bUser);
         }
 
+        // Marko Grmača -----------------------------------------------------------------
         public bool Register(BUser user)
         {
             GymAppRepository gymAppRepository = new GymAppRepository();
@@ -137,6 +140,7 @@ namespace GymBussinessLogic
             return res;
         }
 
+        // Mislav Vetma ----------------------------------------------------------------------
         public List <BBill> UnpaidBills()
         {
             GymAppRepository gymAppRepository = new GymAppRepository();

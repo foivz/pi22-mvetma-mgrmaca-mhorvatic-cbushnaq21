@@ -74,11 +74,21 @@ namespace GymForms.F02andF03Form
                 userManipulation.GeneratePDF(selectedBill);
                 userManipulation.SendEmail();
                 userManipulation.LogPayment(selectedBill);
+
+                Close();
                 
             }
                 
 
             
+        }
+
+        private void FrmPayment_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.F1)
+            {
+                System.Diagnostics.Process.Start("https://github.com/foivz/pi22-mvetma-mgrmaca-mhorvatic-cbushnaq21/wiki/F1-Help-FrmPayment#f1-help-frmpayment");
+            }
         }
     }
 }
