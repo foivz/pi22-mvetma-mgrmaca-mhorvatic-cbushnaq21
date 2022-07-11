@@ -46,19 +46,19 @@ namespace GymAppService
                 Bill newBill = new Bill();
                 if (bill == null)
                 {
-                   
+                
+                    newBill.amount = 199.99;
+                    newBill.due_date = user.registration_date.AddDays(30);
+                    newBill.user_id = user.user_id;
+                    gymAppRepository.CreateBill(newBill);
+                }
+                else if(bill.due_date.Month == DateTime.Now.Month)
+                {
+
                     newBill.amount = 199.99;
                     newBill.due_date = bill.due_date.AddDays(30);
                     bill.User = user;
                     gymAppRepository.CreateBill(bill);
-                }
-                else if(bill.due_date.Month == DateTime.Now.Month)
-                {
-                    newBill.amount = 199.99;
-                    newBill.due_date = user.registration_date.AddDays(30);
-                    bill.User = user;
-                    gymAppRepository.CreateBill(bill);
-
                 }
                 
             }
@@ -112,9 +112,9 @@ namespace GymAppService
             SmtpClient SmtpServer = new SmtpClient("mail.next-cloud.ml");
             mail.From = new MailAddress("pi@next-cloud.ml");
             mail.To.Add(toEmail);
-            mail.Subject = notification.reminder_description;
+            mail.Body = notification.reminder_description;
 
-            mail.Body = "GymApp notification";
+            mail.Subject = "GymApp notification";
 
             SmtpServer.Port = 587;
             SmtpServer.Credentials = new System.Net.NetworkCredential("pi@next-cloud.ml", "mJ5PNFZOdE");
@@ -122,6 +122,14 @@ namespace GymAppService
 
             SmtpServer.Send(mail);
 
+        }
+
+        public void RunAsConsole(string[] args)
+        {
+            OnStart(args);
+            Console.WriteLine("Press any key to exit...");
+            Console.ReadLine();
+            OnStop();
         }
     }
 }

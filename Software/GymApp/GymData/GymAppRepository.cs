@@ -116,7 +116,7 @@ namespace GymData
             using (var context = new PI2212_DBEntities())
             {
                 var query = from n in context.Notifications 
-                            where n.User == user && n.sent == 0 
+                            where n.user_id == user.user_id && n.sent == 0 
                             select n;
 
                 List<Notification> notifications = query.ToList();
@@ -191,12 +191,20 @@ namespace GymData
             using (var context = new PI2212_DBEntities())
             {
                 var query = from b in context.Bills
-                            where b.User == user
+                            where b.user_id == user.user_id
                             orderby b.due_date descending
                             select b;
 
-                Bill bill = query.First();
-                return bill;
+                try
+                {
+                    Bill bill = query.First();
+                    return bill;
+                }
+                catch (Exception)
+                {
+
+                    return null;
+                }
             }
         }
 

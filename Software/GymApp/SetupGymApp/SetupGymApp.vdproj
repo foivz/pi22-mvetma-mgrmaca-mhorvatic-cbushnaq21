@@ -27,6 +27,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_44AF7EAF93714CC28A88FD640D7E3C17"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_486B5DC31A80A94E4D8C41B5B6E8CFE6"
         "OwnerKey" = "8:_0E7622B883FA4686AA5771BE5FE1E413"
         "MsmSig" = "8:_UNDEFINED"
@@ -57,8 +63,8 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_751F79DBC2DE48D39AF93E8218467001"
-        "OwnerKey" = "8:_UNDEFINED"
+        "MsmKey" = "8:_6FA4A3A6F8C1AB496B58E4E7E23A8CDF"
+        "OwnerKey" = "8:_04DA67C2AB2B47629255F1626E66E871"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -71,12 +77,6 @@
         {
         "MsmKey" = "8:_9260B9B2DB87B79BB0A66F5A3A600B06"
         "OwnerKey" = "8:_0E7622B883FA4686AA5771BE5FE1E413"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_95CC89B0EB3644FD9BF1B01271790102"
-        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -254,6 +254,26 @@
         }
         "File"
         {
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_44AF7EAF93714CC28A88FD640D7E3C17"
+            {
+            "SourcePath" = "8:C:\\Users\\AmtevCompute\\Desktop\\JimUp.ico"
+            "TargetName" = "8:JimUp.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_D84E9441E7B8486BB2B702004F1C1BA9"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_486B5DC31A80A94E4D8C41B5B6E8CFE6"
             {
             "AssemblyRegister" = "3:1"
@@ -347,26 +367,6 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_751F79DBC2DE48D39AF93E8218467001"
-            {
-            "SourcePath" = "8:C:\\Users\\AmtevCompute\\Desktop\\JimUp.jpg"
-            "TargetName" = "8:JimUp.jpg"
-            "Tag" = "8:"
-            "Folder" = "8:_D84E9441E7B8486BB2B702004F1C1BA9"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_9260B9B2DB87B79BB0A66F5A3A600B06"
             {
             "AssemblyRegister" = "3:1"
@@ -396,26 +396,6 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_95CC89B0EB3644FD9BF1B01271790102"
-            {
-            "SourcePath" = "8:C:\\Users\\AmtevCompute\\Desktop\\JimUp.ico"
-            "TargetName" = "8:JimUp.ico"
-            "Tag" = "8:"
-            "Folder" = "8:_D84E9441E7B8486BB2B702004F1C1BA9"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_C4E5E565221285FE189FA587641FF48B"
@@ -537,7 +517,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:SetupGymApp"
         "ProductCode" = "8:{BE22B5BC-C0B3-4163-9F39-8127DCA13BEC}"
-        "PackageCode" = "8:{975BE8D6-31FD-411C-AE1B-E735B9A7D5AD}"
+        "PackageCode" = "8:{F5EC35B3-EA03-410F-98A5-56713F33A220}"
         "UpgradeCode" = "8:{28FB5874-EFF0-40AF-B7A6-1FB4DF63360E}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"
@@ -668,7 +648,7 @@
             "Target" = "8:_0E7622B883FA4686AA5771BE5FE1E413"
             "Folder" = "8:_D84E9441E7B8486BB2B702004F1C1BA9"
             "WorkingFolder" = "8:_B82386E6BD114E228D6917D2E8A3A4FC"
-            "Icon" = "8:_95CC89B0EB3644FD9BF1B01271790102"
+            "Icon" = "8:_44AF7EAF93714CC28A88FD640D7E3C17"
             "Feature" = "8:"
             }
         }
