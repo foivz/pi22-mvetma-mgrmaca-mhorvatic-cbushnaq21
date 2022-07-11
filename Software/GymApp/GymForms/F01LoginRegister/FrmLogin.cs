@@ -16,7 +16,9 @@ namespace GymForms.F01Login
     {
         public FrmLogin()
         {
+            
             InitializeComponent();
+            this.KeyPreview = true;
         }
 
         private void buttonLogin_Click(object sender, EventArgs e)
@@ -44,6 +46,15 @@ namespace GymForms.F01Login
         private void buttonForgottenPasswrod_Click(object sender, EventArgs e)
         {
             new FrmPasswordReset().ShowDialog();
+        }
+
+        private void FrmLogin_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1)
+            {
+                System.Diagnostics.Process.Start("https://github.com/foivz/pi22-mvetma-mgrmaca-mhorvatic-cbushnaq21/wiki/F1-Help-FrmLogin");
+                MessageBox.Show("Help");
+            }
         }
     }
 }

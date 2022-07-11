@@ -38,8 +38,10 @@ namespace GymData
             {
 
                 context.Payments.Add(payment);
+
                 int res = context.SaveChanges();
-                if(res > 0)
+                Console.WriteLine("Log payment 2: "+res);
+                if (res > 0)
                 {
                     return true;
                 }
@@ -47,23 +49,47 @@ namespace GymData
             return false;
         }
 
+        public void PayBill(Bill bill)
+        {
+            using (var context = new PI2212_DBEntities())
+            {
+                var query = from u in context.Bills
+                            where u.bill_id == bill.bill_id
+                            select u;
+
+                Bill b = query.Single();
+                b.payed = 1;
+
+                
+                context.SaveChanges();
+            }
+        }
+
         
         public List<Bill> GetUnpaidBills(User user)
         {
-            var query = from u in user.Bills
-                        where u.user_id == user.user_id && u.payed == 0
-                        select u;
-            List<Bill> unpaidBills = query.ToList();
-            return  unpaidBills;
+            using (var context = new PI2212_DBEntities())
+            {
+                var query = from u in context.Bills
+                            where u.user_id == user.user_id && u.payed != 1
+                            select u;
+                List<Bill> unpaidBills = query.ToList();
+                return unpaidBills;
+            }
+            
         }
 
         public List<Bill> GetPaidBills(User user)
         {
-            var query = from u in user.Bills
-                        where u.user_id == user.user_id && u.payed == 1
-                        select u;
-            List<Bill> paidBills = query.ToList();
-            return paidBills;
+            using (var context = new PI2212_DBEntities())
+            {
+                var query = from u in context.Bills
+                            where u.user_id == user.user_id && u.payed == 1
+                            select u;
+                List<Bill> paidBills = query.ToList();
+                return paidBills;
+            }
+            
         }
 
         public bool SaveNewPassword(string email, string password)

@@ -24,9 +24,11 @@ namespace GymForms.F02andF03Form
         private BCard card;
         public FrmPayment(BBill bill)
         {
+            card = new BCard();
             userManipulation = new MiddleMan();
             selectedBill = bill;
             InitializeComponent();
+            this.KeyPreview = true;
         }
 
         private void FrmPayment_Load(object sender, EventArgs e)
@@ -56,7 +58,7 @@ namespace GymForms.F02andF03Form
             card.BValidThru = txtValidThru.Text;
             try
             {
-                card.BCCVNumber = int.Parse(txtCCVnumber.Text);
+                card.BCCVNumber = int.Parse(txtCCVnumber.Text.Trim());
             }
             catch (Exception)
             {
@@ -72,7 +74,7 @@ namespace GymForms.F02andF03Form
             {
                 MessageBox.Show("Payment has been successful!");
                 userManipulation.GeneratePDF(selectedBill);
-                userManipulation.SendEmail();
+                
                 userManipulation.LogPayment(selectedBill);
 
                 Close();

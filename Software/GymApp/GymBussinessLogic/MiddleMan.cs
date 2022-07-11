@@ -158,13 +158,17 @@ namespace GymBussinessLogic
 
             foreach (Bill b in UnpaidBills)
             {
+                
                 BBill bbill = new BBill();
                 bbill.bill_id = b.bill_id;
                 bbill.user_id = b.user_id;
                 bbill.due_date = b.due_date;
                 bbill.amount = b.amount;
                 bbill.payed = b.payed;
+                Console.WriteLine("ALOOOO"+bbill.user_id);
+                bUnpaidBills.Add(bbill);
             }
+            Console.WriteLine("RETURN unpaid");
 
             return bUnpaidBills;
         }
@@ -184,6 +188,7 @@ namespace GymBussinessLogic
                 bbill.due_date = b.due_date;
                 bbill.amount = b.amount;
                 bbill.payed = b.payed;
+                bPaidBills.Add(bbill);
             }
 
             return bPaidBills;
@@ -191,8 +196,12 @@ namespace GymBussinessLogic
 
         public bool CheckCard(BCard card)
         {
-
-            foreach(var c in card.cards)
+            List<BCard> cards = new List<BCard>();
+            cards = new List<BCard>();
+            cards.Add(new BCard("1111", "0724", 708));
+            cards.Add(new BCard("2222", "0823", 530));
+            cards.Add(new BCard("3333", "0125", 476));
+            foreach (var c in cards)
             {
                 if(card.BCardNumber.Equals(c.BCardNumber) &&
                 card.BValidThru.Equals(c.BValidThru)&&
@@ -203,7 +212,9 @@ namespace GymBussinessLogic
 
                 
             }
-
+            BCard found = null;
+            found = cards.Find(c => c.BValidThru.Equals(card.BValidThru) && c.BCardNumber.Equals(card.BCardNumber) && c.BCCVNumber == card.BCCVNumber);
+            if (found != null) return true;
             return false;
 
         }
@@ -221,12 +232,12 @@ namespace GymBussinessLogic
 
             string v = bill.bill_id.ToString();
             var Renderer = new ChromePdfRenderer();
-            Renderer.RenderHtmlAsPdf(html).SaveAs("Invoice: " + v);
-            SendEmail();
+            Renderer.RenderHtmlAsPdf(html).SaveAs("Invoice_" + v+".pdf");
+            SendEmail("Invoice_" + v + ".pdf");
 
         }
 
-        public void SendEmail()
+        public void SendEmail(string filename)
         {
             MailMessage mail = new MailMessage();
             SmtpClient SmtpServer = new SmtpClient("mail.next-cloud.ml");
@@ -237,7 +248,7 @@ namespace GymBussinessLogic
             mail.Body = "This is automated mail with attachment";
 
             System.Net.Mail.Attachment attachment;
-            attachment = new System.Net.Mail.Attachment("GeneratePDF.pdf");
+            attachment = new System.Net.Mail.Attachment(filename);
             mail.Attachments.Add(attachment);
 
             SmtpServer.Port = 587;
@@ -249,10 +260,16 @@ namespace GymBussinessLogic
 
         public void LogPayment(BBill bill)
         {
+            Bill payedBill = new Bill();
             Payment payment = new Payment();
             payment.bill_id = bill.bill_id;
             payment.amount = bill.amount;
             payment.date_payed = DateTime.Now.Date;
+            GymAppRepository gymAppRepository = new GymAppRepository();
+            gymAppRepository.LogPayment(payment);
+            payedBill.bill_id = bill.bill_id;
+            gymAppRepository.PayBill(payedBill);
+            Console.WriteLine("Log payment 1");
 
         }
     }
