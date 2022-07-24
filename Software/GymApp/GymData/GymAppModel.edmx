@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="PI2212_DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="PI2212_DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Appointment">
           <Key>
             <PropertyRef Name="appointment_id" />
@@ -92,6 +92,8 @@
           <Property Name="registration_date" Type="datetime" Nullable="false" />
           <Property Name="phone" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="education" Type="varchar" MaxLength="200" />
+          <Property Name="description" Type="varchar" MaxLength="500" />
+          <Property Name="profile_pic" Type="varchar" MaxLength="500" />
         </EntityType>
         <EntityType Name="user_appointment">
           <Key>
@@ -289,8 +291,7 @@
             <End Role="User" EntitySet="User" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="PI2212_DBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -391,6 +392,8 @@
           <NavigationProperty Name="Role" Relationship="Self.User_Role_role_id_fk" FromRole="User" ToRole="Role" />
           <NavigationProperty Name="Trainings" Relationship="Self.Training_User_user_id_fk" FromRole="User" ToRole="Training" />
           <NavigationProperty Name="Appointments" Relationship="Self.user_appointment" FromRole="User" ToRole="Appointment" />
+          <Property Name="description" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="profile_pic" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
         </EntityType>
         <Association Name="Appointment_Training_training_id_fk">
           <End Role="Training" Type="Self.Training" Multiplicity="1" />
@@ -611,6 +614,8 @@
           <EntitySetMapping Name="Users">
             <EntityTypeMapping TypeName="PI2212_DBModel.User">
               <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="profile_pic" ColumnName="profile_pic" />
+                <ScalarProperty Name="description" ColumnName="description" />
                 <ScalarProperty Name="user_id" ColumnName="user_id" />
                 <ScalarProperty Name="user_name" ColumnName="user_name" />
                 <ScalarProperty Name="user_surname" ColumnName="user_surname" />

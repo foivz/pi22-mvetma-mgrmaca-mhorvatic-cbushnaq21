@@ -16,6 +16,7 @@ namespace GymAppService
     public partial class GymAppService : ServiceBase
     {
         GymAppRepository gymAppRepository;
+        private bool completedCycle = true;
         public GymAppService()
         {
             gymAppRepository = new GymAppRepository();
@@ -25,21 +26,27 @@ namespace GymAppService
         protected override void OnStart(string[] args)
         {
             Timer timer = new Timer();
-            timer.Interval = 10000; //10s
+            timer.Interval = 60000*60; //10s
             timer.Elapsed += new ElapsedEventHandler(this.OnTimer);
             timer.Start();
         }
 
         private void OnTimer(object sender, ElapsedEventArgs e)
         {
-            List<User> users = gymAppRepository.GetAllUsers();
-            SendAllNotifications(users);
-            GenerateBills(users);
-            SendAppointmentReminder();
+            if (completedCycle)
+            {
+                completedCycle = false;
+                List<User> users = gymAppRepository.GetAllUsers();
+                SendAllNotifications(users);
+                GenerateBills(users);
+                SendAppointmentReminder();
+                completedCycle = true;
+            }
         }
 
         private void GenerateBills(List<User> users)
         {
+            completedCycle = false;
             foreach (User user in users)
             {
                 Bill bill = gymAppRepository.GetLastBill(user);

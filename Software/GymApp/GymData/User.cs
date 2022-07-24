@@ -33,6 +33,8 @@ namespace GymData
         public System.DateTime registration_date { get; set; }
         public string phone { get; set; }
         public string education { get; set; }
+        public string description { get; set; }
+        public string profile_pic { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Bill> Bills { get; set; }

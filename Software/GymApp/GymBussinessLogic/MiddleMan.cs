@@ -38,6 +38,10 @@ namespace GymBussinessLogic
                 bUser.phone = user.phone;
                 bUser.education = user.education;
                 bUser.registration_date = user.registration_date;
+                bUser.description = user.description;
+                bUser.profile_pic = user.profile_pic;
+                Console.WriteLine("PROFILE PIC "+user.profile_pic);
+
                 CurrentBUser = bUser;
             }
            
@@ -108,6 +112,8 @@ namespace GymBussinessLogic
             bUser.phone = user.phone;
             bUser.education = user.education;
             bUser.registration_date = user.registration_date;
+            bUser.description = user.description;
+            bUser.profile_pic = user.profile_pic;
 
             gymAppRepository.EditCoachData(bUser);
         }
@@ -127,6 +133,8 @@ namespace GymBussinessLogic
             bUser.phone = user.phone;
             bUser.education = user.education;
             bUser.registration_date = user.registration_date;
+            bUser.description = user.description;
+            bUser.profile_pic = user.profile_pic;
             bUser.role_id = 3;
 
 

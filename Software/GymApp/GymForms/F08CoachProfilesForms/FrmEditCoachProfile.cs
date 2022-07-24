@@ -33,6 +33,10 @@ namespace GymForms.F08CoachProfilesForms
             txtEditCoachEducation.Text = user.education;
             txtEditCOachNumber.Text = user.phone;
             txtEditCoachEmail.Text = user.email;
+            if (user.profile_pic != null && user.profile_pic.Length > 0)
+                pictureBoxProfilePic.Load(user.profile_pic);
+            richTextBoxDescription.Text = user.description;
+            textBoxLinkProfilePic.Text = user.profile_pic;
         }
 
         private void btnCancleChanges_Click(object sender, EventArgs e)
@@ -49,9 +53,19 @@ namespace GymForms.F08CoachProfilesForms
             MiddleMan.CurrentBUser.education = txtEditCoachEducation.Text;
             MiddleMan.CurrentBUser.phone = txtEditCOachNumber.Text;
             MiddleMan.CurrentBUser.email = txtEditCoachEmail.Text;
+            MiddleMan.CurrentBUser.profile_pic = textBoxLinkProfilePic.Text;
+            MiddleMan.CurrentBUser.description = richTextBoxDescription.Text;
 
-            userManipulation.SaveEditedData();                    
+            userManipulation.SaveEditedData();
+            Close();
         
+        }
+
+        private void textBoxLinkProfilePic_TextChanged(object sender, EventArgs e)
+        {
+            pictureBoxProfilePic.Load(textBoxLinkProfilePic.Text);
+           
+            pictureBoxProfilePic.SizeMode = PictureBoxSizeMode.StretchImage;
         }
     }
 }

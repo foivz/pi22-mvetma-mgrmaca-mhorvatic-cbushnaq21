@@ -26,12 +26,17 @@ namespace GymForms.F08CoachProfilesForms
             txtCoachEducation.Text = user.education;
             txtCoachNumber.Text = user.phone;
             txtCoachEmail.Text = user.email;
+            if(user.profile_pic != null && user.profile_pic.Length > 0)
+                pictureProfile.Load(user.profile_pic);
+            pictureProfile.SizeMode = PictureBoxSizeMode.StretchImage;
+            richTextBoxDescription.Text = user.description;
 
             txtCoachName.Enabled = false;
             txtCoachSurname.Enabled = false;
             txtCoachEducation.Enabled = false;
             txtCoachNumber.Enabled = false;
             txtCoachEmail.Enabled = false;
+            richTextBoxDescription.Enabled = false;
         }
 
         private void btnEditProfile_Click(object sender, EventArgs e)

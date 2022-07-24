@@ -26,6 +26,8 @@ namespace GymData
                 currentUser.user_name = user.user_name;
                 currentUser.user_surname = user.user_surname;
                 currentUser.phone = user.phone;
+                currentUser.profile_pic = user.profile_pic;
+                currentUser.description = user.description;
 
                 CurrentUser = currentUser;
 

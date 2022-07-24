@@ -19,5 +19,8 @@ namespace GymBussinessLogic
         public System.DateTime registration_date { get; set; }
         public string phone { get; set; }
         public string education { get; set; }
+        public string description { get; set; }
+        public string profile_pic { get; set; }
+
     }
 }

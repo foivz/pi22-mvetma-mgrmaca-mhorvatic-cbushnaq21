@@ -56,5 +56,10 @@ namespace GymForms.F01Login
                 MessageBox.Show("Help");
             }
         }
+
+        private void FrmLogin_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
