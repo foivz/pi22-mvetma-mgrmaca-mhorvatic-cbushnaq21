@@ -36,6 +36,8 @@
             this.labelPassword = new System.Windows.Forms.Label();
             this.buttonLogin = new System.Windows.Forms.Button();
             this.buttonForgottenPasswrod = new System.Windows.Forms.Button();
+            this.helpLogIn = new System.Windows.Forms.HelpProvider();
+            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             this.SuspendLayout();
             // 
             // textBoxUsername
@@ -96,6 +98,10 @@
             this.buttonForgottenPasswrod.UseVisualStyleBackColor = true;
             this.buttonForgottenPasswrod.Click += new System.EventHandler(this.buttonForgottenPasswrod_Click);
             // 
+            // helpLogIn
+            // 
+            this.helpLogIn.HelpNamespace = "C:\\Users\\AmtevCompute\\Documents\\WinCHM Projects\\Project1\\help.chm";
+            // 
             // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -108,8 +114,11 @@
             this.Controls.Add(this.textBoxPassword);
             this.Controls.Add(this.textBoxUsername);
             this.Name = "FrmLogin";
+            this.helpProvider1.SetShowHelp(this, false);
+            this.helpLogIn.SetShowHelp(this, true);
             this.Text = "FrmLogin";
             this.Load += new System.EventHandler(this.FrmLogin_Load);
+            this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.FrmLogin_HelpRequested);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmLogin_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -125,5 +134,7 @@
         private System.Windows.Forms.Label labelPassword;
         private System.Windows.Forms.Button buttonLogin;
         private System.Windows.Forms.Button buttonForgottenPasswrod;
+        private System.Windows.Forms.HelpProvider helpLogIn;
+        private System.Windows.Forms.HelpProvider helpProvider1;
     }
 }

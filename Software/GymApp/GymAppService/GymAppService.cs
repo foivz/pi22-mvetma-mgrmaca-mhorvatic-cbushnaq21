@@ -26,15 +26,17 @@ namespace GymAppService
         protected override void OnStart(string[] args)
         {
             Timer timer = new Timer();
-            timer.Interval = 60000*60; //10s
+            timer.Interval = 4000;//60000*60; //10s
             timer.Elapsed += new ElapsedEventHandler(this.OnTimer);
             timer.Start();
         }
 
         private void OnTimer(object sender, ElapsedEventArgs e)
         {
+            Console.WriteLine("TIMER triggered");
             if (completedCycle)
             {
+                Console.WriteLine(completedCycle+" completedCycle");
                 completedCycle = false;
                 List<User> users = gymAppRepository.GetAllUsers();
                 SendAllNotifications(users);
@@ -49,23 +51,26 @@ namespace GymAppService
             completedCycle = false;
             foreach (User user in users)
             {
+                Console.WriteLine("GenerateBills user"+user.user_name);
                 Bill bill = gymAppRepository.GetLastBill(user);
                 Bill newBill = new Bill();
                 if (bill == null)
                 {
-                
+                    Console.WriteLine("bill == null");
                     newBill.amount = 199.99;
-                    newBill.due_date = user.registration_date.AddDays(30);
+                    newBill.due_date = user.registration_date.AddMonths(1);
                     newBill.user_id = user.user_id;
-                    gymAppRepository.CreateBill(newBill);
+                    bool res = gymAppRepository.CreateBill(newBill);
+                    Console.WriteLine("1Created bill ?: " + res);
                 }
-                else if(bill.due_date.Month == DateTime.Now.Month)
+                else if(bill.due_date.AddMonths(1).Month == DateTime.Now.Month && bill.User.Role.role_id > 2)
                 {
-
+                    Console.WriteLine("bill.due_date.Month == DateTime.Now.Month");
                     newBill.amount = 199.99;
-                    newBill.due_date = bill.due_date.AddDays(30);
-                    bill.user_id = user.user_id;
-                    gymAppRepository.CreateBill(bill);
+                    newBill.due_date = bill.due_date.AddMonths(1);
+                    newBill.user_id = user.user_id;
+                    bool res = gymAppRepository.CreateBill(newBill);
+                    Console.WriteLine("2Created bill "+bill.amount+"?: "+res);
                 }
                 
             }
@@ -76,6 +81,7 @@ namespace GymAppService
             
             foreach (User user in users)
             {
+                Console.WriteLine(" SendAllNotifications user" + user.user_name);
                 List<Notification> notifications = gymAppRepository.GetUserNotifications(user);
                 foreach (Notification notification in notifications)
                 {
@@ -104,6 +110,7 @@ namespace GymAppService
                         notification.reminder_description = "Reminder for appointment: " + appointment.appointment_description +
                             ", " + 
                             appointment.start_time.ToString();
+                        Console.WriteLine("SendEmail "+user.email+ " "+notification);
                         SendEmail(user.email,notification);
                     }
                 }

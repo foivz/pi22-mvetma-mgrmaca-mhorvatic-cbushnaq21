@@ -154,20 +154,18 @@ namespace GymData
 
         public bool Login(string username, string password)
         {
-            using (var context = new PI2212_DBEntities())
-            {
-                var query = from n in context.Users
-                            where n.username.Equals(username.Trim()) && n.passwordium.Equals(password)
-                            select n;
+            var context = new PI2212_DBEntities(); 
+            var query = from n in context.Users
+                        where n.username.Equals(username.Trim()) && n.passwordium.Equals(password)
+                        select n;
 
-                CurrentUser = query.SingleOrDefault();
-                if(CurrentUser != null)
-                {
-                    var query2 = from b in context.Bills where b.user_id == CurrentUser.user_id select b;
-                    CurrentUser.Bills = query2.ToList();
-                }
-                if(CurrentUser!=null) return true;
+            CurrentUser = query.SingleOrDefault();
+            if (CurrentUser != null)
+            {
+                var query2 = from b in context.Bills where b.user_id == CurrentUser.user_id select b;
+                CurrentUser.Bills = query2.ToList();
             }
+            if (CurrentUser != null) return true;
             return false;
         }
 
@@ -216,24 +214,28 @@ namespace GymData
         // Mislav Vetma ------------------------------------------------------------------------
         public Bill GetLastBill(User user)
         {
-            using (var context = new PI2212_DBEntities())
-            {
+
+            var context = new PI2212_DBEntities();
                 var query = from b in context.Bills
                             where b.user_id == user.user_id
-                            orderby b.due_date descending
+
                             select b;
 
                 try
                 {
-                    Bill bill = query.First();
+                List<Bill> bills = query.ToList();
+                bills.Sort((x, y) => y.due_date.CompareTo(x.due_date));
+                    Bill bill = bills.First();
+                Console.WriteLine("LAST BILL "+bill.due_date);
+                    Console.WriteLine("REPO bill "+bill.bill_id);
                     return bill;
                 }
                 catch (Exception)
                 {
-
+                    Console.WriteLine("REPO no bill for u");
                     return null;
                 }
-            }
+            
         }
 
     }
