@@ -100,22 +100,22 @@ namespace GymBussinessLogic
         {
             GymAppRepository gymAppRepository = new GymAppRepository();
 
-            BUser user = CurrentBUser;
-            User bUser = new User();
-            bUser.user_id = user.user_id;
-            bUser.user_name = user.user_name;
-            bUser.user_surname = user.user_surname;
-            bUser.username = user.username;
-            bUser.email = user.email;
-            bUser.passwordium = user.passwordium;
-            bUser.role_id = user.role_id;
-            bUser.phone = user.phone;
-            bUser.education = user.education;
-            bUser.registration_date = user.registration_date;
-            bUser.description = user.description;
-            bUser.profile_pic = user.profile_pic;
+            BUser bUser = CurrentBUser;
+            User user = new User();
+            user.user_id = bUser.user_id;
+            user.user_name = bUser.user_name;
+            user.user_surname = bUser.user_surname;
+            user.username = bUser.username;
+            user.email = bUser.email;
+            user.passwordium = bUser.passwordium;
+            user.role_id = bUser.role_id;
+            user.phone = bUser.phone;
+            user.education = bUser.education;
+            user.registration_date = bUser.registration_date;
+            user.description = bUser.description;
+            user.profile_pic = bUser.profile_pic;
 
-            gymAppRepository.EditCoachData(bUser);
+            gymAppRepository.EditCoachData(user);
         }
 
         // Marko Grmača -----------------------------------------------------------------
@@ -230,13 +230,41 @@ namespace GymBussinessLogic
         public void GeneratePDF(BBill bill)
         {
             DateTime paidTime = DateTime.UtcNow.Date;
-            string html = "<h2> Bill id: " + bill.bill_id + "<h2>" +
-                          "<h4> Name: " + CurrentBUser.user_name + "<h4>" +
-                          "<h4> Surname: " + CurrentBUser.user_surname + "<h4>"+
-                          "<h4> Amount: " + bill.amount + " HRK <h4>"+
-                          "<h4> Due date: " + bill.due_date + "<h4>"+
-                          "<h4> Date paid: " + paidTime + "<h4>"+
-                          "<h3> Thank you for paying your invoice! XY Gym  <h3>";
+            string html = $@"
+                        <h1> Company name XY </h1> <hr>
+
+                        <div>
+                            OIB: XXXXXXXXXX <br>
+                            Adress: Street street 7 <br>
+                            IBAN:  HR Too many numbers <br>
+                        </div>
+
+                        <div align=""right"">
+                            Name and surname: {CurrentBUser.user_name +" "+ CurrentBUser.user_surname} <br>
+                            Phone number: {CurrentBUser.phone} <br>
+                            e-mail: {CurrentBUser.email} <br>
+                        </div>
+                        <br><br><hr style=""border-width: 3px""> <br><br>
+
+                        <table width=""100%"" border=1>
+
+                            <tr align=""left"">
+                                <th>Service</th>
+                                <th >Amount</th>
+                                <th>Price</th>
+                            </tr>
+                            <tr>
+                                <td>Membership fee</td>
+                                <td>1</td>
+                                <td>{bill.amount} HRK</td>
+                            </tr>
+                        </table>
+                        <br><br><hr style=""border-width: 3px""><br><br>
+                        <div align=""right"">
+                            Price: 199.99 HRK   <br>
+                            Due date: {paidTime}
+                        </div>
+                        ";
 
             string v = bill.bill_id.ToString();
             var Renderer = new ChromePdfRenderer();

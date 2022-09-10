@@ -94,6 +94,7 @@ namespace GymData
             
         }
 
+        //Marko Grmača---------------------------------------------------------------
         public bool SaveNewPassword(string email, string password)
         {
             using (var context = new PI2212_DBEntities())
@@ -112,6 +113,7 @@ namespace GymData
             return false;
         }
 
+        //Mislav Vetma -------------------------------------------------------------
 
         public bool CreateBill(Bill bill)
         {
