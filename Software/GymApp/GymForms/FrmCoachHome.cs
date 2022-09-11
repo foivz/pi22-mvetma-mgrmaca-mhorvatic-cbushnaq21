@@ -1,4 +1,5 @@
-﻿using GymForms.F08CoachProfilesForms;
+﻿using GymBussinessLogic;
+using GymForms.F08CoachProfilesForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,6 +22,12 @@ namespace GymForms
         private void buttonCoachProfile_Click(object sender, EventArgs e)
         {
             new FrmCoachProfile().ShowDialog();
+        }
+
+        private void btnCoachLogout_Click(object sender, EventArgs e)
+        {
+            new MiddleMan().Logout();
+            Close();
         }
     }
 }

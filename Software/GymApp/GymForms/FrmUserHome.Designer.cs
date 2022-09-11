@@ -29,44 +29,44 @@
         private void InitializeComponent()
         {
             this.buttonMembershipFee = new System.Windows.Forms.Button();
-            this.buttonOdabirPlana = new System.Windows.Forms.Button();
-            this.buttonOdabirTermina = new System.Windows.Forms.Button();
+            this.btnSelectTrainPLan = new System.Windows.Forms.Button();
+            this.btnUserSchedule = new System.Windows.Forms.Button();
             this.buttonLogout = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonMembershipFee
             // 
-            this.buttonMembershipFee.Location = new System.Drawing.Point(188, 54);
+            this.buttonMembershipFee.Location = new System.Drawing.Point(291, 56);
             this.buttonMembershipFee.Name = "buttonMembershipFee";
-            this.buttonMembershipFee.Size = new System.Drawing.Size(200, 34);
+            this.buttonMembershipFee.Size = new System.Drawing.Size(150, 40);
             this.buttonMembershipFee.TabIndex = 0;
             this.buttonMembershipFee.Text = "Membership fee";
             this.buttonMembershipFee.UseVisualStyleBackColor = true;
             this.buttonMembershipFee.Click += new System.EventHandler(this.buttonMembershipFee_Click);
             // 
-            // buttonOdabirPlana
+            // btnSelectTrainPLan
             // 
-            this.buttonOdabirPlana.Location = new System.Drawing.Point(188, 141);
-            this.buttonOdabirPlana.Name = "buttonOdabirPlana";
-            this.buttonOdabirPlana.Size = new System.Drawing.Size(200, 33);
-            this.buttonOdabirPlana.TabIndex = 1;
-            this.buttonOdabirPlana.Text = "Majin feature";
-            this.buttonOdabirPlana.UseVisualStyleBackColor = true;
+            this.btnSelectTrainPLan.Location = new System.Drawing.Point(291, 141);
+            this.btnSelectTrainPLan.Name = "btnSelectTrainPLan";
+            this.btnSelectTrainPLan.Size = new System.Drawing.Size(150, 40);
+            this.btnSelectTrainPLan.TabIndex = 1;
+            this.btnSelectTrainPLan.Text = "Training plan";
+            this.btnSelectTrainPLan.UseVisualStyleBackColor = true;
             // 
-            // buttonOdabirTermina
+            // btnUserSchedule
             // 
-            this.buttonOdabirTermina.Location = new System.Drawing.Point(188, 208);
-            this.buttonOdabirTermina.Name = "buttonOdabirTermina";
-            this.buttonOdabirTermina.Size = new System.Drawing.Size(200, 33);
-            this.buttonOdabirTermina.TabIndex = 2;
-            this.buttonOdabirTermina.Text = "Majin feature 2";
-            this.buttonOdabirTermina.UseVisualStyleBackColor = true;
+            this.btnUserSchedule.Location = new System.Drawing.Point(291, 228);
+            this.btnUserSchedule.Name = "btnUserSchedule";
+            this.btnUserSchedule.Size = new System.Drawing.Size(150, 40);
+            this.btnUserSchedule.TabIndex = 2;
+            this.btnUserSchedule.Text = "Schedule";
+            this.btnUserSchedule.UseVisualStyleBackColor = true;
             // 
             // buttonLogout
             // 
-            this.buttonLogout.Location = new System.Drawing.Point(340, 386);
+            this.buttonLogout.Location = new System.Drawing.Point(326, 340);
             this.buttonLogout.Name = "buttonLogout";
-            this.buttonLogout.Size = new System.Drawing.Size(75, 31);
+            this.buttonLogout.Size = new System.Drawing.Size(85, 40);
             this.buttonLogout.TabIndex = 3;
             this.buttonLogout.Text = "Logout";
             this.buttonLogout.UseVisualStyleBackColor = true;
@@ -78,8 +78,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.buttonLogout);
-            this.Controls.Add(this.buttonOdabirTermina);
-            this.Controls.Add(this.buttonOdabirPlana);
+            this.Controls.Add(this.btnUserSchedule);
+            this.Controls.Add(this.btnSelectTrainPLan);
             this.Controls.Add(this.buttonMembershipFee);
             this.Name = "FrmUserHome";
             this.Text = "FrmUserHome";
@@ -90,8 +90,8 @@
         #endregion
 
         private System.Windows.Forms.Button buttonMembershipFee;
-        private System.Windows.Forms.Button buttonOdabirPlana;
-        private System.Windows.Forms.Button buttonOdabirTermina;
+        private System.Windows.Forms.Button btnSelectTrainPLan;
+        private System.Windows.Forms.Button btnUserSchedule;
         private System.Windows.Forms.Button buttonLogout;
     }
 }
