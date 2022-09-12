@@ -26,7 +26,7 @@ namespace GymAppService
         protected override void OnStart(string[] args)
         {
             Timer timer = new Timer();
-            timer.Interval = 60*60000; //svaki sat
+            timer.Interval = 2*60000; //svaki sat
             timer.Elapsed += new ElapsedEventHandler(this.OnTimer);
             timer.Start();
         }

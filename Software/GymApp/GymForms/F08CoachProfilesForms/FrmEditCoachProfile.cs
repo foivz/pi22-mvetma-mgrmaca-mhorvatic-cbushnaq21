@@ -63,9 +63,16 @@ namespace GymForms.F08CoachProfilesForms
 
         private void textBoxLinkProfilePic_TextChanged(object sender, EventArgs e)
         {
-            pictureBoxProfilePic.Load(textBoxLinkProfilePic.Text);
-           
-            pictureBoxProfilePic.SizeMode = PictureBoxSizeMode.StretchImage;
+            try
+            {
+                pictureBoxProfilePic.Load(textBoxLinkProfilePic.Text);
+                pictureBoxProfilePic.SizeMode = PictureBoxSizeMode.StretchImage;
+            }
+            catch (Exception ex)
+            {
+
+                Console.WriteLine(ex.Message);
+            }
         }
     }
 }
