@@ -125,6 +125,14 @@ namespace GymData
         {
             using (var context = new PI2212_DBEntities())
             {
+                var query = from b in context.Bills
+                            where b.due_date.Month == bill.due_date.Month && b.user_id == bill.user_id
+                            select b;
+                if (query.Any())
+                {
+                    Console.WriteLine("BILL bill: "+ bill.due_date + "  "+query.First().due_date);
+                    return false;
+                }
 
                 context.Bills.Add(bill);
                 int res = context.SaveChanges();
@@ -194,14 +202,14 @@ namespace GymData
 
         public List<Appointment> GetAppointments()
         {
-            using (var context = new PI2212_DBEntities())
-            {
+            var context = new PI2212_DBEntities();
+            
                 var query = from a in context.Appointments
                             select a ;
 
                 List<Appointment> appointments = query.ToList();
                 return appointments;
-            }
+            
         }
 
         public void SetNotificationSent(Notification notification)
@@ -244,6 +252,22 @@ namespace GymData
                     return null;
                 }
             
+        }
+
+        public bool SaveNotification(Notification notification)
+        {
+            using(var context = new PI2212_DBEntities())
+            {
+                var query = from n in context.Notifications
+                            where n.user_id == notification.user_id && n.reminder_description.Equals(notification.reminder_description)
+                            select n;
+                if (query.Any())
+                {
+                    return false;
+                }
+                context.Notifications.Add(notification);
+                return context.SaveChanges() > 0;
+            }
         }
 
     }

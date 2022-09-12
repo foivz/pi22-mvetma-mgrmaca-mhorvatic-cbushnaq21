@@ -19,20 +19,22 @@ namespace GymAppService
         private bool completedCycle = true;
         public GymAppService()
         {
-            gymAppRepository = new GymAppRepository();
+            
             InitializeComponent();
         }
 
         protected override void OnStart(string[] args)
         {
             Timer timer = new Timer();
-            timer.Interval = 2*60000; //svaki sat
+            timer.Interval = 60*60000; //svaki sat
+            timer.Interval = 10000; //svaki sad
             timer.Elapsed += new ElapsedEventHandler(this.OnTimer);
             timer.Start();
         }
 
         private void OnTimer(object sender, ElapsedEventArgs e)
         {
+            gymAppRepository = new GymAppRepository();
             Console.WriteLine("TIMER triggered");
             if (completedCycle)
             {
@@ -51,28 +53,25 @@ namespace GymAppService
             completedCycle = false;
             foreach (User user in users)
             {
-                Console.WriteLine("GenerateBills user"+user.user_name);
-                Bill bill = gymAppRepository.GetLastBill(user);
-                Bill newBill = new Bill();
-                if (bill == null)
-                {
-                    Console.WriteLine("bill == null");
-                    newBill.amount = 199.99;
-                    newBill.due_date = user.registration_date.AddMonths(1);
-                    newBill.user_id = user.user_id;
-                    bool res = gymAppRepository.CreateBill(newBill);
-                    Console.WriteLine("1Created bill ?: " + res);
-                }
-                else if(bill.due_date.AddMonths(1).Month == DateTime.Now.Month && bill.User.Role.role_id > 2)
-                {
-                    Console.WriteLine("bill.due_date.Month == DateTime.Now.Month");
-                    newBill.amount = 199.99;
-                    newBill.due_date = bill.due_date.AddMonths(1);
-                    newBill.user_id = user.user_id;
-                    bool res = gymAppRepository.CreateBill(newBill);
-                    Console.WriteLine("2Created bill "+bill.amount+"?: "+res);
-                }
+                //Console.WriteLine("GenerateBills user"+user.user_name);
                 
+
+                DateTime date = user.registration_date;
+                while(date.Month <= DateTime.Now.Month && user.role_id > 2)
+                {
+                    //Bill bill = gymAppRepository.GetLastBill(user);
+                    Console.WriteLine($"USER {user.user_surname}  DATE date date "+date);
+                    Bill newBill = new Bill();
+                    newBill.amount = 199.99;
+                    newBill.due_date = date;
+                    newBill.user_id = user.user_id;
+                    newBill.payed = null;
+                    bool res = gymAppRepository.CreateBill(newBill);
+                    date = date.AddMonths(1);
+
+                }
+
+
             }
         }
 
@@ -81,12 +80,15 @@ namespace GymAppService
             
             foreach (User user in users)
             {
-                Console.WriteLine(" SendAllNotifications user" + user.user_name);
+                //Console.WriteLine(" SendAllNotifications user" + user.user_name);
                 List<Notification> notifications = gymAppRepository.GetUserNotifications(user);
                 foreach (Notification notification in notifications)
                 {
-                    SendEmail(user.email, notification);
-                    gymAppRepository.SetNotificationSent(notification);
+                    if (SendEmail(user.email, notification)) 
+                    {
+                        gymAppRepository.SetNotificationSent(notification);
+                    }
+                    
                 }
                 
             }
@@ -104,14 +106,21 @@ namespace GymAppService
 
                     long time1 = dateTimeOffset1.ToUnixTimeSeconds();
                     long time2 = dateTimeOffset2.ToUnixTimeSeconds();
-                    if( time1-time2 < 86400 && time1-time2 > 86381 )
+                    if( time1-time2 < 86400)
                     {
                         Notification notification = new Notification();
+                        notification.user_id = user.user_id;
+                        notification.notifcation_type_id = 2;
                         notification.reminder_description = "Reminder for appointment: " + appointment.appointment_description +
                             ", " + 
                             appointment.start_time.ToString();
-                        Console.WriteLine("SendEmail "+user.email+ " "+notification);
-                        SendEmail(user.email,notification);
+            
+
+                        //Console.WriteLine("SendEmail "+user.email+ " "+notification);
+                        if (gymAppRepository.SaveNotification(notification) && SendEmail(user.email, notification))
+                        {
+                            gymAppRepository.SetNotificationSent(notification);
+                        }
                     }
                 }
             }
@@ -120,7 +129,7 @@ namespace GymAppService
         protected override void OnStop()
         {
         }
-        protected void SendEmail(string toEmail, Notification notification)
+        protected bool SendEmail(string toEmail, Notification notification)
         {
             MailMessage mail = new MailMessage();
             SmtpClient SmtpServer = new SmtpClient("mail.next-cloud.ml");
@@ -134,7 +143,16 @@ namespace GymAppService
             SmtpServer.Credentials = new System.Net.NetworkCredential("pi@next-cloud.ml", "mJ5PNFZOdE");
             SmtpServer.EnableSsl = false;
 
-            SmtpServer.Send(mail);
+            try
+            {
+                SmtpServer.Send(mail);
+                return true;
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
 
         }
 
