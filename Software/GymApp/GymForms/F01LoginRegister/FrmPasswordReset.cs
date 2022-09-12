@@ -25,6 +25,7 @@ namespace GymForms.F01LoginRegister
             {
                 MessageBox.Show("Password reset and email sent.");
             }
+
         }
     }
 }

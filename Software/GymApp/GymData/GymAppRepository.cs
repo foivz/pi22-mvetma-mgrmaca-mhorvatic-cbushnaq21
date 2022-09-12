@@ -97,20 +97,26 @@ namespace GymData
         //Marko Grmača---------------------------------------------------------------
         public bool SaveNewPassword(string email, string password)
         {
-            using (var context = new PI2212_DBEntities())
-            {
-
-                var query = from u in context.Users where u.email.Equals(email) select u;
-
-                User user = query.Single();
-                user.passwordium = password;
-                int res = context.SaveChanges();
-                if (res > 0)
+         
+                using (var context = new PI2212_DBEntities())
                 {
-                    return true;
+
+                    var query = from u in context.Users where u.email.Equals(email) select u;
+
+                    User user = query.Single();
+                    user.passwordium = password;
+                    int res = context.SaveChanges();
+                    if (res > 0)
+                    {
+                        return true;
+                    }
+                    return false;
+               
                 }
-            }
-            return false;
+                
+            
+            
+            
         }
 
         //Mislav Vetma -------------------------------------------------------------

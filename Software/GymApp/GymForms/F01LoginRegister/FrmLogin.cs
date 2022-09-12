@@ -1,4 +1,5 @@
 ﻿using GymBussinessLogic;
+using GymForms.Admin;
 using GymForms.F01LoginRegister;
 using System;
 using System.Collections.Generic;
@@ -35,10 +36,17 @@ namespace GymForms.F01Login
                 if (MiddleMan.CurrentBUser.role_id == 3)
                 {
                     new FrmUserHome().ShowDialog();
-                }else if(MiddleMan.CurrentBUser.role_id == 2)
+
+                }
+                if(MiddleMan.CurrentBUser.role_id == 2)
                 {
                     new FrmCoachHome().ShowDialog();
                 }
+                if (MiddleMan.CurrentBUser.role_id == 1)
+                {
+                    new FrmAdmin().ShowDialog();
+                }
+
             }
             else
             {

@@ -52,24 +52,28 @@ namespace GymBussinessLogic
 
         public bool ResetPassword(string email)
         {
-            Random random = new Random();
-            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-            string password = new string(Enumerable.Repeat(chars, 8)
-                .Select(s => s[random.Next(s.Length)]).ToArray());
-            bool res = new GymAppRepository().SaveNewPassword(email, password);
-            if (res)
-            {
-                try
+            
+                Random random = new Random();
+                const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+                string password = new string(Enumerable.Repeat(chars, 8)
+                    .Select(s => s[random.Next(s.Length)]).ToArray());
+                bool res = new GymAppRepository().SaveNewPassword(email, password);
+                if (res)
                 {
-                    SendPasswordResetEmail(email, password);
-                    return true;
+                    try
+                    {
+                        SendPasswordResetEmail(email, password);
+                        return true;
+                    }
+                    catch (Exception)
+                    {
+                        return false;
+                    }
                 }
-                catch (Exception)
-                {
-                    return false;
-                }
-            }
-            return false;
+                return false;
+            
+            
+            
         }
 
         private void SendPasswordResetEmail(string email, string password)
@@ -302,7 +306,8 @@ namespace GymBussinessLogic
             payment.amount = bill.amount;
             payment.date_payed = DateTime.Now.Date;
             GymAppRepository gymAppRepository = new GymAppRepository();
-            gymAppRepository.LogPayment(payment);
+            gymAppRepository.LogPayment (payment);
+            gymAppRepository.LogPayment (payment);
             payedBill.bill_id = bill.bill_id;
             gymAppRepository.PayBill(payedBill);
             Console.WriteLine("Log payment 1");
