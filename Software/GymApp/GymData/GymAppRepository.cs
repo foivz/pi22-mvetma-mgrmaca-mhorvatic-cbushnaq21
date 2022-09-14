@@ -126,7 +126,7 @@ namespace GymData
             using (var context = new PI2212_DBEntities())
             {
                 var query = from b in context.Bills
-                            where b.due_date.Month == bill.due_date.Month && b.user_id == bill.user_id
+                            where b.due_date.Month == bill.due_date.Month && b.due_date.Year == bill.due_date.Year && b.user_id == bill.user_id
                             select b;
                 if (query.Any())
                 {

@@ -4,6 +4,7 @@ using IronPdf;
 using Stripe;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Net.Mail;
 using System.Text;
@@ -298,8 +299,21 @@ namespace GymBussinessLogic
 
             string v = bill.bill_id.ToString();
             var Renderer = new ChromePdfRenderer();
-            Renderer.RenderHtmlAsPdf(html).SaveAs("Invoice_" + v+".pdf");
-            SendEmail("Invoice_" + v + ".pdf");
+            try
+            {
+                string filename = "Invoice_" + v + ".pdf";
+                //Renderer.RenderHtmlAsPdf(html).PrintToFile(filename);
+                
+                Renderer.RenderHtmlAsPdf(html).SaveAs("Invoice_" + v + ".pdf");
+                Process.Start(filename);
+                SendEmail(filename);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                
+            }
+            
 
         }
 
