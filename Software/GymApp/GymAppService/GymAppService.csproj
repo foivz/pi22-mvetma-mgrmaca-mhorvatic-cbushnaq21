@@ -6,7 +6,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{019F8579-B322-46D3-8A3F-90E488655018}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>WinExe</OutputType>
     <RootNamespace>GymAppService</RootNamespace>
     <AssemblyName>GymAppService</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>

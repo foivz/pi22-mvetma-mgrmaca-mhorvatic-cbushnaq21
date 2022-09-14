@@ -37,12 +37,11 @@ namespace GymForms.F01Login
                 {
                     new FrmUserHome().ShowDialog();
 
-                }
-                if(MiddleMan.CurrentBUser.role_id == 2)
+                }else if(MiddleMan.CurrentBUser.role_id == 2)
                 {
                     new FrmCoachHome().ShowDialog();
                 }
-                if (MiddleMan.CurrentBUser.role_id == 1)
+                else if (MiddleMan.CurrentBUser.role_id == 1)
                 {
                     new FrmAdmin().ShowDialog();
                 }
