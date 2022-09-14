@@ -1,5 +1,7 @@
-﻿using GymData;
+﻿using GymBussinessLogic.Models;
+using GymData;
 using IronPdf;
+using Stripe;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -229,6 +231,30 @@ namespace GymBussinessLogic
             if (found != null) return true;
             return false;
 
+        }
+
+        public Charge DoPayment(string cardNumber, double amount, string email)
+        {
+            amount = amount * 100;
+            StripeCharge stripeCharge = new StripeCharge();
+            stripeCharge.Source = cardNumber;
+            stripeCharge.Source = "tok_visa";
+            stripeCharge.Amount = (long)amount;
+            stripeCharge.Currency = "hrk";
+            stripeCharge.ReceiptEmail = email;
+            StripeController controller = new StripeController();
+            Charge charge;
+            try
+            {
+                charge = controller.CreateCharge(stripeCharge);
+            }
+            catch (StripeException)
+            {
+
+                return null;
+            }
+           
+            return charge;
         }
 
         public void GeneratePDF(BBill bill)

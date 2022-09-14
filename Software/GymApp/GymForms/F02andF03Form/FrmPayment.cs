@@ -64,11 +64,14 @@ namespace GymForms.F02andF03Form
             {
                 MessageBox.Show("Format is not valid for CCV number");
                 card.BCCVNumber = 0;
+                return;
             }
 
-            if(userManipulation.CheckCard(card) == false)
+            Stripe.Charge charge = userManipulation.DoPayment(card.BCardNumber, selectedBill.amount, MiddleMan.CurrentBUser.email);
+
+            if(charge == null)
             {
-                MessageBox.Show("Error, card data is not correct!");
+                MessageBox.Show("Payment has failed!");
             }
             else
             {
