@@ -53,14 +53,12 @@ namespace GymAppService
             completedCycle = false;
             foreach (User user in users)
             {
-                //Console.WriteLine("GenerateBills user"+user.user_name);
-                
 
                 DateTime date = user.registration_date;
-                while(date.Month <= DateTime.Now.Month && user.role_id > 2)
+
+                do
                 {
-                    //Bill bill = gymAppRepository.GetLastBill(user);
-                    Console.WriteLine($"USER {user.user_surname}  DATE date date "+date);
+                    Console.WriteLine($"USER {user.user_surname}  DATE date date " + date);
                     Bill newBill = new Bill();
                     newBill.amount = 199.99;
                     newBill.due_date = date;
@@ -68,9 +66,7 @@ namespace GymAppService
                     newBill.payed = null;
                     bool res = gymAppRepository.CreateBill(newBill);
                     date = date.AddMonths(1);
-
-                }
-
+                } while (date.CompareTo(DateTime.Now) < 0 && user.role_id > 2);
 
             }
         }
@@ -80,7 +76,6 @@ namespace GymAppService
             
             foreach (User user in users)
             {
-                //Console.WriteLine(" SendAllNotifications user" + user.user_name);
                 List<Notification> notifications = gymAppRepository.GetUserNotifications(user);
                 foreach (Notification notification in notifications)
                 {
